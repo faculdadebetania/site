@@ -1,0 +1,16 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --swiper-pagination-color: #fca311;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: #fca311;
+    --swiper-pagination-bullet-inactive-opacity: 0.5;
+    --swiper-pagination-bullet-size: 12px;
+    --swiper-pagination-bottom: -8px;
+  }
+}
+
+.swiper-pagination-bullet {
+  border: 1px solid #080f1c;
+}
