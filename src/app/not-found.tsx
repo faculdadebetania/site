@@ -15,7 +15,7 @@ export default function NotFound() {
         onClick={router.back}
       >
         Retornar&nbsp;
-        <Icon name="undo-2" />
+        <Icon name="Undo2" />
       </Button>
     </div>
   );

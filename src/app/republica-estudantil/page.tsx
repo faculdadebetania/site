@@ -37,21 +37,21 @@ export default function Page() {
       </CourseHero>
       <CourseFeatures className="xl:grid-cols-3">
         <CourseFeature>
-          <CourseFeatureIcon name="award" />
+          <CourseFeatureIcon name="Award" />
           <CourseFeatureTitle>Reconhecido</CourseFeatureTitle>
           <CourseFeatureValue>
             Infraestrutura avaliada e reconhecida pelo MEC
           </CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="map-pin" />
+          <CourseFeatureIcon name="MapPin" />
           <CourseFeatureTitle>Localização</CourseFeatureTitle>
           <CourseFeatureValue>
             Av. Iguaçu, 1700, Curitiba - PR
           </CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
-          <CourseFeatureIcon name="dollar-sign" />
+          <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>R$ 820,00 / mês</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">
