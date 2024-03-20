@@ -48,18 +48,18 @@ export default function Page() {
       </CourseHero>
       <CourseFeatures>
         <CourseFeature>
-          <CourseFeatureIcon name="panel-bottom" />
+          <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
           <p className="text-sm">Próxima turma 09/04/2024</p>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="calendar-days" />
+          <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Duração</CourseFeatureTitle>
           <CourseFeatureValue>{course.duration}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="clock-3" />
+          <CourseFeatureIcon name="Clock3" />
           <CourseFeatureTitle>Período</CourseFeatureTitle>
           <CourseFeatureValue>
             {course.period}&nbsp;(19h-22h30)
@@ -67,7 +67,7 @@ export default function Page() {
           <CourseFeatureValue>terça-feira</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
-          <CourseFeatureIcon name="dollar-sign" />
+          <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>{course.price}</CourseFeatureValue>
           <CourseFeatureValue>ou 4 parcelas de R$100</CourseFeatureValue>
@@ -114,7 +114,7 @@ export default function Page() {
           </CourseLearnMoreItem>
           <CourseLearnMoreItem
             link="http://moodle.faculdadebetania.com.br/"
-            icon="user"
+            icon="User"
           >
             Portal do Aluno
           </CourseLearnMoreItem>
