@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "cypress": "cypress open",
-    "prepare": "husky install .husky"
+    "prepare": "husky"
   },
   "engines": {
     "node": "20.x.x",
