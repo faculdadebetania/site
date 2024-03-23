@@ -43,12 +43,12 @@ export default function Page() {
       </CourseHero>
       <CourseFeatures>
         <CourseFeature>
-          <CourseFeatureIcon name="panel-bottom" />
+          <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="calendar-days" />
+          <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Duração</CourseFeatureTitle>
           <CourseFeatureValue>{course.duration}</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">
@@ -56,7 +56,7 @@ export default function Page() {
           </CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="clock-3" />
+          <CourseFeatureIcon name="Clock3" />
           <CourseFeatureTitle>Período</CourseFeatureTitle>
           <CourseFeatureValue>
             {course.period}&nbsp;(19h-22h30)
@@ -66,7 +66,7 @@ export default function Page() {
           </CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
-          <CourseFeatureIcon name="dollar-sign" />
+          <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>{course.price}*</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">
@@ -107,16 +107,16 @@ export default function Page() {
           >
             Inscrição
           </CourseLearnMoreItem>
-          <CourseLearnMoreItem link="/vestibular" icon="graduation-cap">
+          <CourseLearnMoreItem link="/vestibular" icon="GraduationCap">
             Vestibular
           </CourseLearnMoreItem>
           <CourseLearnMoreItem
             link="/documentos/teologia/matriz-curricular.pdf"
-            icon="list"
+            icon="List"
           >
             Matriz Curricular
           </CourseLearnMoreItem>
-          <CourseLearnMoreItem link="/republica-estudantil" icon="home">
+          <CourseLearnMoreItem link="/republica-estudantil" icon="Home">
             República Estudantil
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>

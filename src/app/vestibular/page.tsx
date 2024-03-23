@@ -31,17 +31,17 @@ export default function Page() {
       </CourseHero>
       <CourseFeatures className="xl:grid-cols-3">
         <CourseFeature>
-          <CourseFeatureIcon name="pencil" />
+          <CourseFeatureIcon name="Pencil" />
           <CourseFeatureTitle>Exame</CourseFeatureTitle>
           <CourseFeatureValue>Uma redação, máximo 2 horas</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
-          <CourseFeatureIcon name="calendar-days" />
+          <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Data</CourseFeatureTitle>
           <CourseFeatureValue>Agendado</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
-          <CourseFeatureIcon name="dollar-sign" />
+          <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Inscrição</CourseFeatureTitle>
           <CourseFeatureValue>R$ 30,00</CourseFeatureValue>
         </CourseFeature>

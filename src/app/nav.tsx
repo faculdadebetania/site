@@ -59,7 +59,7 @@ export function NavDesktop() {
                 className={`${navigationMenuTriggerStyle()} flex`}
               >
                 SOBRE NÓS
-                <Icon name="chevron-down" size={16} />
+                <Icon name="ChevronDown" size={16} />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="border-[1px] border-zinc-200 rounded-xl"

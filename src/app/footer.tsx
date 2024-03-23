@@ -22,17 +22,17 @@ export default function Footer() {
           <div className="w-full flex gap-4 justify-center">
             <Button className="bg-white text-primary h-10 w-10 hover:opacity-50 hover:bg-white hover:text-primary transition">
               <Link href="https://www.instagram.com/faculdadebetania/">
-                <Icon name="instagram" />
+                <Icon name="Instagram" />
               </Link>
             </Button>
             <Button className="bg-white text-primary h-10 w-10 hover:opacity-50 hover:bg-white hover:text-primary transition">
               <Link href="https://www.facebook.com/faculdadebetania">
-                <Icon name="facebook" />
+                <Icon name="Facebook" />
               </Link>
             </Button>
             <Button className="bg-white text-primary h-10 w-10 hover:opacity-50 hover:bg-white hover:text-primary transition">
               <Link href="https://www.youtube.com/c/FaculdadeTeol%C3%B3gicaBet%C3%A2nia">
-                <Icon name="youtube" />
+                <Icon name="Youtube" />
               </Link>
             </Button>
           </div>
