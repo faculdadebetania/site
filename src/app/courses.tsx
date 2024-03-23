@@ -54,7 +54,7 @@ function Course({ course }: CourseProps) {
           Período: <b>{course.period}</b>
         </div>
         <div>
-          Próxima turma: <b>{course.upcoming}</b>
+          Previsão de início: <b>{course.upcoming}</b>
         </div>
       </section>
       <Separator className="!m-0" />

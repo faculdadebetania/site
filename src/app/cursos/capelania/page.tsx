@@ -52,7 +52,7 @@ export default function Page() {
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
-          <p className="text-sm">Próxima turma 22/04/2024</p>
+          <p className="text-sm">Previsão de início 22/04/2024</p>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
