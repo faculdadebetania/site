@@ -46,7 +46,7 @@ export default function Page() {
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
-          <p className="text-sm">Previsão de início 18/03/2024</p>
+          <p className="text-sm">Previsão de início 13/05/2024</p>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
