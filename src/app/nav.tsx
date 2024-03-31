@@ -1,95 +1,132 @@
 'use client';
-import { Button } from '@components/button';
+import { Button } from '@components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@components/dropdown-menu';
-import Icon from '@components/icon';
+} from '@components/ui/dropdown-menu';
+import Icon from '@components/ui/icon';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from '@components/navigation-menu';
+} from '@components/ui/navigation-menu';
+import { cn } from '@utils/cn';
 import Link from 'next/link';
-import { Fragment, useState } from 'react';
+import { Fragment, PropsWithChildren, useState } from 'react';
 
 export function NavDesktop() {
-  const [opened, setOpened] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  function handleHover() {
+    setOpen(!open);
+  }
+
+  function MenuLink({ children }: PropsWithChildren) {
+    return (
+      <NavigationMenuLink
+        className={cn(navigationMenuTriggerStyle(), 'hover:bg-inherit')}
+      >
+        {children}
+      </NavigationMenuLink>
+    );
+  }
 
   return (
     <Fragment>
       <NavigationMenu>
-        <NavigationMenuList className="gap-1">
+        <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  'hover:bg-inherit h-auto'
+                )}
+              >
                 INÍCIO
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/#cursos" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  'hover:bg-inherit h-auto'
+                )}
+              >
                 CURSOS
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/vestibular" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  'hover:bg-inherit h-auto'
+                )}
+              >
                 VESTIBULAR
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/republica-estudantil" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  'hover:bg-inherit h-auto'
+                )}
+              >
                 REPÚBLICA ESTUDANTIL
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <DropdownMenu onOpenChange={setOpened} open={opened}>
+          <NavigationMenuItem
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}
+          >
+            <DropdownMenu open={open} onOpenChange={setOpen}>
               <DropdownMenuTrigger
-                onMouseOver={() => setOpened(true)}
-                className={`${navigationMenuTriggerStyle()} flex`}
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  'flex gap-1 hover:bg-inherit h-auto focus:bg-inherit data-[active]:bg-inherit data-[state=open]:bg-inherit'
+                )}
               >
-                SOBRE NÓS
+                INSTITUCIONAL
                 <Icon name="ChevronDown" size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className="border-[1px] border-zinc-200 rounded-xl"
-                onMouseLeave={() => setOpened(false)}
-              >
-                {/* <DropdownMenuItem className="p-0">
-                  <Link href="/a-faculdade" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} !w-full h-full !justify-start`}
-                    >
-                      A Faculdade
-                    </NavigationMenuLink>
-                  </Link>
-                </DropdownMenuItem> */}
-                <DropdownMenuItem className="p-0">
-                  <Link href="/corpo-docente" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} !w-full h-full !justify-start`}
-                    >
-                      Corpo Docente
-                    </NavigationMenuLink>
+              <DropdownMenuContent className="bg-primary/75 border-white/10">
+                <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
+                  <Link
+                    href="/corpo-docente"
+                    className="flex items-center gap-2 w-full"
+                  >
+                    <Icon name="GraduationCap" strokeWidth={1} /> Corpo Docente
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="p-0">
-                  <Link href="/documentos" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} !w-full h-full !justify-start`}
-                    >
-                      Documentos
-                    </NavigationMenuLink>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
+                  <Link
+                    href="/documentos"
+                    className="flex items-center justify gap-2 w-full"
+                  >
+                    <Icon name="Files" strokeWidth={1} /> Documentos
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
+                  <Link
+                    href="/ouvidoria"
+                    className="flex items-center gap-2 w-full"
+                  >
+                    <Icon name="MessagesSquare" strokeWidth={1} /> Ouvidoria
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -98,8 +135,8 @@ export function NavDesktop() {
         </NavigationMenuList>
       </NavigationMenu>
       <Button
-        className="bg-white text-slate-800 rounded-full p-6 hover:bg-slate-800 hover:text-white font-bold"
         asChild
+        className="bg-white text-primary hover:bg-white/25 hover:text-white rounded-full p-6 font-bold"
       >
         <Link href="http://educacional.usecerbrum.net/">Portal Acadêmico</Link>
       </Button>

@@ -1,6 +1,6 @@
 'use client';
-import { Separator } from '@components/separator';
 import { Swiper, SwiperSlide } from '@components/swiper';
+import { Separator } from '@components/ui/separator';
 import Image from 'next/image';
 import { faculty } from 'src/mock/faculty';
 import useCourse from './course.hook';

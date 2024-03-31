@@ -1,4 +1,4 @@
-import { Separator } from '@components/separator';
+import { Separator } from '@components/ui/separator';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 

@@ -1,4 +1,4 @@
-import { Separator } from '@components/separator';
+import { Separator } from '@components/ui/separator';
 import { notFound } from 'next/navigation';
 import CourseCurriculum from '../course-curriculum';
 import {

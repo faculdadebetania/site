@@ -1,6 +1,6 @@
 'use client';
-import { Button } from '@components/button';
-import Icon from '@components/icon';
+import { Button } from '@components/ui/button';
+import Icon from '@components/ui/icon';
 import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
