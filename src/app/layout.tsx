@@ -1,5 +1,5 @@
 import VLibras from '@components/vlibras';
-import '@styles/globals.scss';
+import '@styles/global.scss';
 import { cn } from '@utils/cn';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';

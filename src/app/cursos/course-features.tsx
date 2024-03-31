@@ -1,5 +1,5 @@
-import Icon, { IconProps } from '@components/icon';
-import { Separator } from '@components/separator';
+import Icon, { IconProps } from '@components/ui/icon';
+import { Separator } from '@components/ui/separator';
 import { cn } from '@utils/cn';
 import { HTMLAttributes, PropsWithChildren, forwardRef } from 'react';
 

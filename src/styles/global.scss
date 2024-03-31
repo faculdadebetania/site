@@ -1,0 +1,64 @@
+@import 'swiper';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 219 55.56% 7.06%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 37.28 97.51% 52.75%;
+    --secondary-foreground: 0 0% 98%;
+
+    --background: #{--primary};
+    --foreground: 0 0% 98%;
+
+    --card: #{--primary};
+    --card-foreground: 0 0% 98%;
+
+    --popover: red;
+    --popover-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: #{--secondary};
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  html {
+    @apply font-nunito;
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply w-full py-8 lg:py-16 px-8 lg:px-16 xl:px-32;
+  }
+}

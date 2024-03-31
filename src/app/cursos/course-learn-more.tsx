@@ -1,4 +1,4 @@
-import Icon, { IconProps } from '@components/icon';
+import Icon, { IconProps } from '@components/ui/icon';
 import { cn } from '@utils/cn';
 import Image from 'next/image';
 import Link from 'next/link';
