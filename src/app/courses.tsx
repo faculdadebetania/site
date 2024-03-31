@@ -1,5 +1,5 @@
-import { Button } from '@components/button';
-import { Separator } from '@components/separator';
+import { Button } from '@components/ui/button';
+import { Separator } from '@components/ui/separator';
 import { cn } from '@utils/cn';
 import Link from 'next/link';
 import { Course, courses } from 'src/mock/courses';

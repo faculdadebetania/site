@@ -19,7 +19,10 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.preferences.autoImportFileExcludePatterns": ["lucide-react"],
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "lucide-react",
+    "@radix-ui"
+  ],
   "scss.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore"
 }
