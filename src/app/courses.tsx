@@ -19,7 +19,7 @@ export default function Courses() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded-md">
         {courses.map((course) => (
-          <Course key={course.link} course={course} />
+          <CourseCard key={course.link} course={course} />
         ))}
       </div>
     </section>
@@ -30,7 +30,7 @@ type CourseProps = {
   course: Course;
 };
 
-function Course({ course }: CourseProps) {
+function CourseCard({ course }: CourseProps) {
   return (
     <Link
       href={course.link}
