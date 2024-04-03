@@ -1,3 +1,4 @@
+import ReCAPTCHA from '@components/recaptcha';
 import VLibras from '@components/vlibras';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Whatsapp />
         <Analytics />
         <VLibras />
+        <ReCAPTCHA />
       </body>
     </html>
   );
