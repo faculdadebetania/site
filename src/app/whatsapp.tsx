@@ -14,17 +14,19 @@ export default function Whatsapp() {
   return (
     <TooltipProvider delayDuration={300}>
       <Tooltip>
-        <TooltipTrigger className="fixed bottom-12 right-12">
+        <TooltipTrigger className="fixed bottom-32 right-2">
           <Link href={href}>
             <Image
               alt="whatsapp"
               src="/imagens/whatsapp.png"
-              width={48}
-              height={48}
+              width={40}
+              height={40}
             />
           </Link>
         </TooltipTrigger>
-        <TooltipContent>Fale conosco!</TooltipContent>
+        <TooltipContent side="left" sideOffset={8} className="bg-primary">
+          Fale conosco!
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
