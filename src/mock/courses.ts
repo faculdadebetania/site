@@ -21,7 +21,7 @@ export const courses: Course[] = [
     price: 'R$ 399 / mês',
     period: 'Noturno',
     duration: '3½ anos',
-    upcoming: 'Março 2024',
+    upcoming: '22 jul. 2024',
     link: '/cursos/teologia',
     modality: 'Presencial',
     category: 'Bacharelado',
