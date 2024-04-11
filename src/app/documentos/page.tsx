@@ -47,7 +47,7 @@ export default function Page() {
           Relatório CPA 2021 - parcial
         </Document>
         <Document href="/documentos/cpa/relatorio-cpa-2020.pdf">
-          Relatório CPA 2020
+          Relatório CPA 2020 - integral
         </Document>
         <Document href="/documentos/cpa/relatorio-cpa-parcial-2019.pdf">
           Relatório CPA 2019 - parcial
@@ -56,7 +56,7 @@ export default function Page() {
           Relatório CPA 2018 - parcial
         </Document>
         <Document href="/documentos/cpa/relatorio-cpa-2017.pdf">
-          Relatório CPA 2017
+          Relatório CPA 2017 - integral
         </Document>
         <Document href="/documentos/cpa/relatorio-cpa-2016.pdf">
           Relatório CPA 2016 - parcial
