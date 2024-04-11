@@ -68,8 +68,7 @@ export default function Page() {
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>{course.price}*</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">
-            *Valor integral R$399,00, desconto de R$100,00 para pagamentos até o
-            dia 10
+            *Valor integral R$330, desconto de R$31 para pagamentos até o dia 10
           </CourseFeatureValue>
         </CourseFeature>
       </CourseFeatures>

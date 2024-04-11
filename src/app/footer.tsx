@@ -41,20 +41,23 @@ export default function Footer() {
           <h3 className="font-bold uppercase">CURSOS</h3>
           <ul className="flex flex-col gap-1">
             <li>
-              <Link href="cursos/teologia">Teologia</Link>
+              <Link href="/cursos/teologia">Teologia</Link>
             </li>
             <li>
-              <Link href="cursos/aconselhamento-e-gestao-de-pessoas">
+              <Link href="/cursos/aconselhamento-e-gestao-de-pessoas">
                 Aconselhamento e Gestão de Pessoas
               </Link>
             </li>
             <li>
-              <Link href="cursos/capelania">Capelania</Link>
+              <Link href="/cursos/capelania">Capelania</Link>
             </li>
             <li>
-              <Link href="cursos/comunicao-que-transforma">
+              <Link href="/cursos/comunicacao-que-transforma">
                 Comunicação que transforma
               </Link>
+            </li>
+            <li>
+              <Link href="cursos/biblia-e-teologia">Bíblia e Teologia</Link>
             </li>
           </ul>
         </section>
