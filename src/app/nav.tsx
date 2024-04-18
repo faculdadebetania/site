@@ -17,23 +17,17 @@ import {
 } from '@components/ui/navigation-menu';
 import { cn } from '@utils/cn';
 import Link from 'next/link';
-import { Fragment, PropsWithChildren, useState } from 'react';
+import { Fragment, useState } from 'react';
 
 export function NavDesktop() {
   const [open, setOpen] = useState(false);
 
-  function handleHover() {
-    setOpen(!open);
+  function handleMouseEnter() {
+    setOpen(true);
   }
 
-  function MenuLink({ children }: PropsWithChildren) {
-    return (
-      <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), 'hover:bg-inherit')}
-      >
-        {children}
-      </NavigationMenuLink>
-    );
+  function handleMouseLeave() {
+    setOpen(false);
   }
 
   return (
@@ -88,12 +82,10 @@ export function NavDesktop() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover}
-          >
+          <NavigationMenuItem>
             <DropdownMenu open={open} onOpenChange={setOpen}>
               <DropdownMenuTrigger
+                onMouseEnter={handleMouseEnter}
                 className={cn(
                   navigationMenuTriggerStyle(),
                   'flex gap-1 hover:bg-inherit h-auto focus:bg-inherit data-[active]:bg-inherit data-[state=open]:bg-inherit'
@@ -102,7 +94,10 @@ export function NavDesktop() {
                 INSTITUCIONAL
                 <Icon name="ChevronDown" size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-primary/75 border-white/10">
+              <DropdownMenuContent
+                className="bg-primary/75 border-white/10"
+                onMouseLeave={handleMouseLeave}
+              >
                 <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
                   <Link
                     href="/corpo-docente"
