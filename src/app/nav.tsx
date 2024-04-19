@@ -32,7 +32,7 @@ export function NavDesktop() {
 
   return (
     <Fragment>
-      <NavigationMenu>
+      <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
@@ -103,7 +103,7 @@ export function NavDesktop() {
                     href="/corpo-docente"
                     className="flex items-center gap-2 w-full"
                   >
-                    <Icon name="GraduationCap" strokeWidth={1} /> Corpo Docente
+                    <Icon name="UsersRound" strokeWidth={1} /> Corpo Docente
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -124,6 +124,15 @@ export function NavDesktop() {
                     <Icon name="MessagesSquare" strokeWidth={1} /> Ouvidoria
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
+                  <Link
+                    href="/diplomas"
+                    className="flex items-center gap-2 w-full"
+                  >
+                    <Icon name="GraduationCap" strokeWidth={1} /> Diplomas
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </NavigationMenuItem>
@@ -131,7 +140,7 @@ export function NavDesktop() {
       </NavigationMenu>
       <Button
         asChild
-        className="bg-white text-primary hover:bg-white/25 hover:text-white rounded-full p-6 font-bold"
+        className="hidden md:inline-flex bg-white text-primary hover:bg-white/25 hover:text-white rounded-full p-6 font-bold"
       >
         <Link href="http://educacional.usecerbrum.net/">Portal Acadêmico</Link>
       </Button>
