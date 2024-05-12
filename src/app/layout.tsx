@@ -1,3 +1,4 @@
+import A11y from '@components/a11y';
 import ReCAPTCHA from '@components/recaptcha';
 import VLibras from '@components/vlibras';
 import '@styles/global.scss';
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Analytics />
         <VLibras />
         <ReCAPTCHA />
+        <A11y />
       </body>
     </html>
   );
