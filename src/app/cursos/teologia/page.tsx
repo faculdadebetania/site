@@ -119,6 +119,12 @@ export default function Page() {
           <CourseLearnMoreItem link="/republica-estudantil" icon="Home">
             República Estudantil
           </CourseLearnMoreItem>
+          <CourseLearnMoreItem
+            link="/documentos/teologia/manual-do-aluno.pdf"
+            icon="ScrollText"
+          >
+            Manual do Aluno
+          </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
       <CourseFaculty id={course.id} />
