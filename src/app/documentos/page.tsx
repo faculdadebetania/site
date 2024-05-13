@@ -6,7 +6,10 @@ export default function Page() {
     <main className="container">
       <h1 className="text-7xl uppercase font-bold mb-8">Documentos</h1>
       <ul>
-        <h2 className="text-2xl uppercase text-secondary">Para Todos</h2>
+        <h2 className="text-2xl uppercase text-secondary">Alunos</h2>
+        <Document href="/documentos/teologia/manual-do-aluno.pdf">
+          Manual do Aluno
+        </Document>
         <Document href="/documentos/teologia/calendario-academico.pdf">
           Calendário Acadêmico 2024
         </Document>
@@ -25,6 +28,9 @@ export default function Page() {
         <Document href="/documentos/relato-institucional.pdf">
           Relato Institucional
         </Document>
+        <Document href="/documentos/regimento-institucional.pdf">
+          Regimento Institucional
+        </Document>
         <Document href="/documentos/portaria-credenciamento.pdf">
           Portaria de Credenciamento
         </Document>
@@ -39,6 +45,15 @@ export default function Page() {
         </Document>
         <Document href="/documentos/pdi-2021-2025.pdf">
           Plano de Desenvolvimento Institucional - 2021 a 2025
+        </Document>
+        <Document href="/documentos/ppc-teologia.pdf">
+          PPC - Bacharelado em Teologia
+        </Document>
+        <Document href="/documentos/ppc-aconselhamento-e-gestao.pdf">
+          PPC - Pós-graduação em Aconselhamento e Gestão de pessoas
+        </Document>
+        <Document href="/documentos/ppc-biblia-e-teologia.pdf">
+          PPC - Pós-graduação em Bíblia e Teologia
         </Document>
         <Separator className="!my-8" />
         <h2 className="text-2xl uppercase text-secondary">Relatórios CPA</h2>

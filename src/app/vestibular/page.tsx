@@ -55,13 +55,6 @@ export default function Page() {
             Inscrição
           </CourseLearnMoreItem>
           <CourseLearnMoreItem
-            link="/documentos/teologia/edital-vestibular.pdf"
-            target="_blank"
-            className="hover:bg-secondary"
-          >
-            Edital do Vestibular
-          </CourseLearnMoreItem>
-          <CourseLearnMoreItem
             link="/documentos/teologia/manual-do-candidato.pdf"
             target="_blank"
             className="hover:bg-secondary"
