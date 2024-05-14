@@ -47,7 +47,7 @@ export default function Page() {
           Plano de Desenvolvimento Institucional - 2021 a 2025
         </Document>
         <Document href="/documentos/ppc-teologia.pdf">
-          PPC - Bacharelado em Teologia
+          PPC - Bacharelado em Teologia - Presencial
         </Document>
         <Document href="/documentos/ppc-aconselhamento-e-gestao.pdf">
           PPC - Pós-graduação em Aconselhamento e Gestão de pessoas
