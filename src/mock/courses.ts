@@ -88,7 +88,7 @@ export const courses: Course[] = [
     price: 'R$ 150,00',
     period: 'Noturno',
     duration: '4 dias',
-    upcoming: '22 abr. 2024',
+    upcoming: '12 ago. 2024',
     link: '/cursos/capelania',
     modality: 'Presencial/Online',
     category: 'Curso Livre',

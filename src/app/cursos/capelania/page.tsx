@@ -52,7 +52,7 @@ export default function Page() {
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
-          <p className="text-sm">Previsão de início 22/04/2024</p>
+          <p className="text-sm">Previsão de início 12/08/2024</p>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
@@ -65,7 +65,7 @@ export default function Page() {
           <CourseFeatureValue>
             {course.period}&nbsp;(19h-22h30)
           </CourseFeatureValue>
-          <CourseFeatureValue>22, 23, 25 e 26 de abril</CourseFeatureValue>
+          <CourseFeatureValue>12 a 16 de agosto</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
           <CourseFeatureIcon name="DollarSign" />
