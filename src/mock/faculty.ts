@@ -22,7 +22,7 @@ export const faculty = [
   },
   {
     id: 3,
-    name: 'Fred Rolando Bornschein', //FRED ROLANDO BORNSCHEIN
+    name: 'Fred Roland Bornschein', //FRED ROLANDO BORNSCHEIN
     qualifications: [
       'Mestre em Teologia (PUC-PR)',
       'Especialista em Estudos Avançados em Teologia e Bíblia (Faculdade Luterana de Teologia, São Bento do Sul-SC)',
@@ -41,7 +41,7 @@ export const faculty = [
   },
   {
     id: 5,
-    name: 'José de Godói Filho', //JOSÉ DE GODÓI FILHO
+    name: 'José de Godoi Filho', //JOSÉ DE GODÓI FILHO
     qualifications: [
       'Pós-graduado em Psicodrama Terapêutica (Assoc. Paranaense de Psicodrama)',
       'Pós-graduado em Psicologia Clínica (UTP)',
@@ -97,7 +97,7 @@ export const faculty = [
   },
   {
     id: 10,
-    name: 'Nilto Maurício Torquato',
+    name: 'Nilton Maurício Torquato',
     qualifications: [
       'Mestre em Educação e novas tecnologias (UNIVERSIDADE INTERNACIONAL)',
       'Especialista em Gestão e Educação Ambiental (Centro Universitário Leonardo da Vinci - UNIASSELVI)',
@@ -134,16 +134,6 @@ export const faculty = [
       'Graduado em Teologia - SEMIB',
       'Graduado em Teologia - Bacharelado - FACETEN',
       'Bacharelado e Licenciatura em Filosofia - UFPR',
-    ],
-  },
-  {
-    id: 14,
-    name: 'Claudio Ernani Ebert', //CLAUDIO ERNANI EBERT
-    qualifications: [
-      'Pós-graduado em Terapia Familiar Sistêmica (Faculdade Luterana de Teologia FTL)',
-      'Pós Graduação em Revisão Prática de texto, pela UNYLEYA - RJ ',
-      'Bacharel em Teologia (Centro Universitário Claretiano)',
-      'Graduado em Liderança Avançada pelo Instituto Haggai Cingapura.',
     ],
   },
   {
