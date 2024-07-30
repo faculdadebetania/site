@@ -22,17 +22,9 @@ import { Fragment, useState } from 'react';
 export function NavDesktop() {
   const [open, setOpen] = useState(false);
 
-  function handleMouseEnter() {
-    setOpen(true);
-  }
-
-  function handleMouseLeave() {
-    setOpen(false);
-  }
-
   return (
     <Fragment>
-      <NavigationMenu className="hidden md:flex">
+      <NavigationMenu className="hidden lg:flex">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
@@ -85,7 +77,7 @@ export function NavDesktop() {
           <NavigationMenuItem>
             <DropdownMenu open={open} onOpenChange={setOpen}>
               <DropdownMenuTrigger
-                onMouseEnter={handleMouseEnter}
+                onMouseEnter={() => setOpen(true)}
                 className={cn(
                   navigationMenuTriggerStyle(),
                   'flex gap-1 hover:bg-inherit h-auto focus:bg-inherit data-[active]:bg-inherit data-[state=open]:bg-inherit'
@@ -96,7 +88,7 @@ export function NavDesktop() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="bg-primary/75 border-white/10"
-                onMouseLeave={handleMouseLeave}
+                onMouseLeave={() => setOpen(false)}
               >
                 <DropdownMenuItem className="hover:bg-white/15 focus:bg-white/15">
                   <Link
@@ -140,7 +132,7 @@ export function NavDesktop() {
       </NavigationMenu>
       <Button
         asChild
-        className="hidden md:inline-flex bg-white text-primary hover:bg-white/25 hover:text-white rounded-full p-6 font-bold"
+        className="hidden lg:inline-flex bg-white text-primary hover:bg-white/25 hover:text-white rounded-full p-6 font-bold"
       >
         <Link href="http://educacional.usecerbrum.net/">Portal Acadêmico</Link>
       </Button>
