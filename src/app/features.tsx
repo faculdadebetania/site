@@ -41,7 +41,7 @@ const features: Array<Feature> = [
     title: 'Interdenominacional',
     image: '/imagens/puzzle.png',
     text: `Na FATEBE temos professores e alunos de diferentes denominações e você estuda as
-    diferetes visões teológicas e interpretações bíblicas sobre diversos assuntos.`,
+    diferentes visões teológicas e interpretações bíblicas sobre diversos assuntos.`,
     link: '#',
   },
   {

@@ -101,7 +101,7 @@ export const courses: Course[] = [
     price: 'R$ 349,99',
     period: 'Noturno',
     duration: '9 dias',
-    upcoming: '12 ago. 2024',
+    upcoming: '10 set. 2024',
     link: '/cursos/comunicacao-que-transforma',
     modality: 'Presencial/Online',
     category: 'Curso Livre',

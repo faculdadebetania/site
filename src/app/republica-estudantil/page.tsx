@@ -53,7 +53,7 @@ export default function Page() {
         <CourseFeature separator={false}>
           <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
-          <CourseFeatureValue>R$ 820,00 / mês</CourseFeatureValue>
+          <CourseFeatureValue>R$ 850,00 / mês</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">
             Incluso custos de moradia e do curso
           </CourseFeatureValue>
