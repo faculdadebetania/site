@@ -51,7 +51,7 @@ export default function Page() {
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
           <CourseFeatureValue>{course.modality}</CourseFeatureValue>
-          <p className="text-sm">Previsão de início 10/09/2024</p>
+          <p className="text-sm">Previsão de início 01/10/2024</p>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
@@ -62,7 +62,7 @@ export default function Page() {
           <CourseFeatureIcon name="Clock3" />
           <CourseFeatureTitle>Período</CourseFeatureTitle>
           <CourseFeatureValue>
-            {course.period}&nbsp;(19h-22h30)
+            {course.period}&nbsp;(19h30-22h00)
           </CourseFeatureValue>
           <CourseFeatureValue>terça-feira</CourseFeatureValue>
         </CourseFeature>
