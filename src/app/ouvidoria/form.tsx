@@ -1,4 +1,5 @@
 'use client';
+import { Button } from '@components/ui/button';
 import {
   Form,
   FormControl,
@@ -6,8 +7,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@components/form';
-import { Button } from '@components/ui/button';
+} from '@components/ui/form';
 import Icon from '@components/ui/icon';
 import { Input } from '@components/ui/input';
 import { Textarea } from '@components/ui/textarea';

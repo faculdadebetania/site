@@ -6,11 +6,11 @@ import { cn } from '@utils/cn';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import Contact from './contact';
-import { nunito, poppins } from './fonts';
-import Footer from './footer';
-import Header from './header';
-import Whatsapp from './whatsapp';
+import Contact from '../components/layout/contact';
+import { nunito, poppins } from '../components/layout/fonts';
+import Footer from '../components/layout/footer';
+import Header from '../components/layout/header';
+import Whatsapp from '../components/layout/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Faculdade Teológica Betânia',
