@@ -1,8 +1,6 @@
 import { Button } from '@components/ui/button';
 import { Separator } from '@components/ui/separator';
 import { cn } from '@utils/cn';
-import { toLocaleDate } from '@utils/date';
-import capitalize from 'capitalize';
 import Link from 'next/link';
 import { Course } from 'src/models/course.model';
 
@@ -11,28 +9,7 @@ type Props = {
 };
 
 export function CourseCard({ course }: Props) {
-  const { category, duration, durationUnit, name, paymentRecurrence, period, price, slug, startDate, startDateType } = course;
-
-  let _duration = String(duration);
-
-  if (duration % 1 === 0.5) {
-    _duration = Math.trunc(duration) + '½';
-  }
-
-  _duration = `${_duration} ${durationUnit}`;
-
-  const _period = capitalize(period);
-
-  let _startDate = toLocaleDate(startDate).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' });
-
-  if (startDateType === 'mês') {
-    _startDate = toLocaleDate(startDate).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
-  }
-
-  _startDate = _startDate.replace(/\sde\s/g, String.fromCharCode(32));
-
-  let _price = `R$ ${price}`;
-  if (paymentRecurrence === 'mês') _price = `${_price} / mês`;
+  const { category, duration, name, period, price, slug, startDate } = course;
 
   let backgroundColor = 'bg-neutral-200';
   let textColor = 'text-primary';
@@ -48,7 +25,7 @@ export function CourseCard({ course }: Props) {
 
   return (
     <Link
-      href={slug}
+      href={`/cursos/${slug}`}
       className={cn(
         'flex flex-col justify-between min-h-[300px] gap-4 p-8 rounded-lg hover:opacity-80 transition border-white border-[1px] border-solid',
         backgroundColor,
@@ -62,18 +39,18 @@ export function CourseCard({ course }: Props) {
       <section>
         <div>
           Duração:&nbsp;
-          <b>{_duration}</b>
+          <b>{duration}</b>
         </div>
         <div>
-          Período:&nbsp;<b>{_period}</b>
+          Período:&nbsp;<b>{period}</b>
         </div>
         <div>
-          Data de início:&nbsp;<b>{_startDate}</b>
+          Data de início:&nbsp;<b>{startDate}</b>
         </div>
       </section>
       <Separator className="!m-0" />
       <section className="flex flex-col justify-between items-start gap-4 md:flex-row md:items-center">
-        <div className="font-extrabold">{_price}</div>
+        <div className="font-extrabold">{price}</div>
         <Button className="w-full p-4 bg-white text-primary font-bold text-base hover:bg-white hover:text-primary md:w-max">
           Saiba Mais
         </Button>
