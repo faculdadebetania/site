@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev --turbopack -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -32,12 +32,12 @@
     "clsx": "^2",
     "embla-carousel-react": "^8.0.0",
     "eslint": "^8",
-    "eslint-config-next": "^14",
+    "eslint-config-next": "15.0.1",
     "lucide-react": "^0",
-    "next": "^14",
+    "next": "15.0.1",
     "nodemailer": "^6",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-hook-form": "^7",
     "react-markdown": "^9.0.1",
     "swiper": "^11",
@@ -53,8 +53,8 @@
     "@types/grecaptcha": "^3.0.9",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "autoprefixer": "^10",
     "commitizen": "^4",
     "cz-conventional-changelog": "^3",
@@ -71,5 +71,11 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    }
+  }
 }
