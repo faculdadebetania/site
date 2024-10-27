@@ -26,6 +26,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1",
     "@vercel/analytics": "^1",
+    "@vercel/speed-insights": "^1.0.14",
     "capitalize": "^2.0.4",
     "class-variance-authority": "^0",
     "clsx": "^2",

@@ -4,6 +4,7 @@ import VLibras from '@components/vlibras';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import Contact from '../components/layout/contact';
@@ -26,10 +27,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Contact />
         <Footer />
         <Whatsapp />
-        <Analytics />
         <VLibras />
         <ReCAPTCHA />
         <A11y />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
