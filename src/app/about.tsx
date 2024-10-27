@@ -45,9 +45,7 @@ const items: Array<Item> = [
 export default function About() {
   return (
     <section className="container flex flex-col gap-16 bg-neutral-200">
-      <h1 className="uppercase text-5xl lg:text-7xl font-bold text-primary">
-        NOSSAS PUBLICAÇÕES
-      </h1>
+      <h1 className="uppercase text-4xl lg:text-7xl font-bold text-primary">NOSSAS PUBLICAÇÕES</h1>
       <ul className="list-none grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-16">
         {items.map((item) => (
           <AboutItem key={item.title} item={item} />
@@ -63,10 +61,7 @@ interface AboutItemProps {
 function AboutItem({ item }: AboutItemProps) {
   return (
     <li>
-      <Link
-        href={item.link}
-        className="flex items-center gap-4 rounded-lg p-8 bg-primary hover:bg-secondary transition"
-      >
+      <Link href={item.link} className="flex items-center gap-4 rounded-lg p-8 bg-primary hover:bg-secondary transition">
         {item.icon && <Icon name={item.icon} size={64} className="mr-2" />}
         {item.image && (
           <div className="relative">
@@ -77,8 +72,7 @@ function AboutItem({ item }: AboutItemProps) {
               width={64}
               height={64}
               style={{
-                filter:
-                  'invert(99%) sepia(1%) saturate(321%) hue-rotate(202deg) brightness(116%) contrast(100%)',
+                filter: 'invert(99%) sepia(1%) saturate(321%) hue-rotate(202deg) brightness(116%) contrast(100%)',
               }}
             />
           </div>

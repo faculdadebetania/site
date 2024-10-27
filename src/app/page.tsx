@@ -1,5 +1,5 @@
+import Courses from './_components/course/courses';
 import About from './about';
-import Courses from './courses';
 import Features from './features';
 import Hero from './hero';
 

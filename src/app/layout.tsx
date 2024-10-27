@@ -19,10 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html
-      lang="pt-BR"
-      className={cn(poppins.variable, nunito.variable, 'bg-primary')}
-    >
+    <html lang="pt-BR" className={cn(poppins.variable, nunito.variable, 'bg-primary')}>
       <body>
         <Header />
         {children}
