@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Button } from './ui/button';
-import Icon from './ui/icon';
+import { Button } from '../ui/button';
+import Icon from '../ui/icon';
 
 export default function A11y() {
   return (

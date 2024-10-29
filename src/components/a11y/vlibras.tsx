@@ -4,6 +4,9 @@ import Script from 'next/script';
 import { Fragment } from 'react';
 
 export default function VLibras() {
+  const { NODE_ENV } = process.env;
+  if (NODE_ENV !== 'production') return;
+
   function handleLoad() {
     new window.VLibras.Widget('https://vlibras.gov.br/app');
     window.onload();
@@ -17,11 +20,7 @@ export default function VLibras() {
           <div className="vw-plugin-top-wrapper" />
         </div>
       </div>
-      <Script
-        src="https://vlibras.gov.br/app/vlibras-plugin.js"
-        onLoad={handleLoad}
-        strategy="afterInteractive"
-      />
+      <Script src="https://vlibras.gov.br/app/vlibras-plugin.js" onLoad={handleLoad} strategy="afterInteractive" />
     </Fragment>
   );
 }

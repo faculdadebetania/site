@@ -1,6 +1,6 @@
-import A11y from '@components/a11y';
-import ReCAPTCHA from '@components/recaptcha';
-import VLibras from '@components/vlibras';
+import A11y from '@components/a11y/a11y';
+import VLibras from '@components/a11y/vlibras';
+import ReCAPTCHA from '@components/forms/recaptcha';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
 import { Analytics } from '@vercel/analytics/react';
