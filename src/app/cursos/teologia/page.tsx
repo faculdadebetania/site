@@ -1,6 +1,6 @@
 import { Separator } from '@components/ui/separator';
 import { getCourse } from 'src/providers/course.provider';
-import { CourseFaculty } from '../course-faculty';
+import { CourseFaculties } from '../course-faculty';
 import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValue, CourseFeatures } from '../course-features';
 import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo, CourseInfoVideo } from '../course-info';
@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays } =
+  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, faculties } =
     await getCourse('teologia');
 
   return (
@@ -91,7 +91,7 @@ export default async function Page() {
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
-      <CourseFaculty id={'teologia'} />
+      <CourseFaculties {...{ faculties }} />
     </main>
   );
 }

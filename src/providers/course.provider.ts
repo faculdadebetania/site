@@ -5,7 +5,8 @@ import { fetchCMS } from './cms.provider';
 
 export async function getCourse(slug: string): Promise<Course> {
   const params = {
-    populate: '*',
+    'populate[0]': '*',
+    'populate[faculties][populate]': 'photo',
     'filters[slug][$eq]': slug,
   };
 

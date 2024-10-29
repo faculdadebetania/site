@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { getCourse } from 'src/providers/course.provider';
 import CourseCurriculum from '../course-curriculum';
 import { CourseFaculty } from '../course-faculty';

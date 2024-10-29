@@ -1,3 +1,5 @@
+import { Faculty } from './faculty.model';
+
 export interface Course {
   price: string;
   period: string;
@@ -10,4 +12,5 @@ export interface Course {
   priceDisclaimer: string;
   weekDays: string;
   classSchedule: string;
+  faculties: Array<Faculty>;
 }

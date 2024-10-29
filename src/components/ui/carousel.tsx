@@ -1,6 +1,7 @@
 'use client';
 
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
+
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import * as React from 'react';
 
@@ -121,7 +122,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
-          className={cn('relative', className)}
+          className={cn('relative mb-12', className)}
           role="region"
           aria-roledescription="carousel"
           {...props}
@@ -218,4 +219,64 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = 'CarouselNext';
 
-export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi };
+type PropType = React.ComponentPropsWithRef<'button'>;
+const DotButton: React.FC<PropType> = ({ children, className, ...props }) => {
+  return (
+    <button
+      type="button"
+      className="bg-transparent appearance-none touch-manipulation cursor-pointer border-0 p-0 m-0 w-8 h-8 flex items-center justify-center rounded-full"
+      {...props}
+    >
+      <span className={cn('w-4 h-4 rounded-full flex items-center border-[1px] border-solid border-stone-500', className)} />
+      {children}
+    </button>
+  );
+};
+
+function CarouselDots() {
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+  const { api } = useCarousel();
+
+  const onDotButtonClick = React.useCallback(
+    (index: number) => {
+      if (!api) return;
+      api.scrollTo(index);
+    },
+    [api]
+  );
+
+  const onInit = React.useCallback(() => {
+    if (!api) return;
+    setScrollSnaps(api.scrollSnapList());
+  }, [api]);
+
+  const onSelect = React.useCallback(() => {
+    if (!api) return;
+    setSelectedIndex(api.selectedScrollSnap());
+  }, [api]);
+
+  React.useEffect(() => {
+    if (!api) return;
+    onInit();
+    onSelect();
+    api.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
+  }, [api, onInit, onSelect]);
+
+  console.log(scrollSnaps, selectedIndex);
+
+  return (
+    <div className="flex flex-wrap justify-end items-center absolute right-0 -bottom-12">
+      {scrollSnaps.map((_, index) => (
+        <DotButton
+          key={index}
+          onClick={() => onDotButtonClick(index)}
+          className={cn({ 'border-stone-100': selectedIndex === index })}
+        />
+      ))}
+    </div>
+  );
+}
+
+export { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi };

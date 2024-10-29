@@ -1,4 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@components/ui/carousel';
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from '@components/ui/carousel';
 import { Course } from 'src/models/course.model';
 import { getCourses } from 'src/providers/course.provider';
 import { CourseCard } from './course-card';
@@ -23,7 +23,7 @@ export default async function Courses() {
           palavra da verdade.&quot; Timóteo 2:15
         </span>
       </div>
-      <Carousel className="mb-12">
+      <Carousel>
         <CarouselContent>
           {order.map((slug) => {
             const course = courses.find((course) => course.slug === slug) as Course;
@@ -36,6 +36,7 @@ export default async function Courses() {
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
+        <CarouselDots />
       </Carousel>
     </section>
   );

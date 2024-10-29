@@ -6,8 +6,6 @@ import { z } from 'zod';
 export const schema = z.object({
   data: z.array(
     z.object({
-      id: z.number(),
-      documentId: z.string(),
       price: z.number(),
       period: z.literal('noturno'),
       duration: z.number(),
@@ -15,9 +13,6 @@ export const schema = z.object({
       startDate: z.coerce.date(),
       modality: z.enum(['presencial', 'presencial/online', 'online']),
       category: z.enum(['bacharelado', 'pós-graduação', 'curso livre']),
-      createdAt: z.coerce.date(),
-      updatedAt: z.coerce.date(),
-      publishedAt: z.coerce.date(),
       name: z.string(),
       slug: z.string(),
       priceDisclaimer: z.string(),
@@ -25,6 +20,15 @@ export const schema = z.object({
       paymentRecurrence: z.enum(['mês', 'único']),
       startDateType: z.enum(['dia', 'mês']),
       classSchedule: z.string(),
+      faculties: z.array(
+        z.object({
+          name: z.string(),
+          academicBackground: z.string(),
+          photo: z.object({
+            url: z.string(),
+          }),
+        })
+      ),
     })
   ),
   meta: z.any(),
@@ -47,6 +51,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       modality,
       classSchedule,
       priceDisclaimer,
+      faculties,
     } = course;
 
     let _duration = String(duration);
@@ -89,6 +94,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       startDate: _startDate,
       price: _price,
       weekDays: _weekDays,
+      faculties,
     };
   });
 
