@@ -29,7 +29,7 @@ export async function fetchCMS<T extends z.Schema>(props: Props<T>): Promise<z.i
   const headers = new Headers();
   headers.append('Authorization', `Bearer ${CMS_API_TOKEN}`);
 
-  const requestInit: RequestInit = { method, headers, cache: 'force-cache', next: { tags: ['web'] } };
+  const requestInit: RequestInit = { method, headers, cache: 'force-cache', next: { tags: ['cms'] } };
   if (params && method === 'POST') requestInit.body = JSON.stringify(params);
 
   const body = await fetch(decodedURI, requestInit).then((res) => res.json());
