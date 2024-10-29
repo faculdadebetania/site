@@ -2,6 +2,7 @@ import { toLocaleDate } from '@utils/date';
 import capitalize from 'capitalize';
 import { Course } from 'src/models/course.model';
 import { z } from 'zod';
+import { getFacultiesSchema } from './faculties.schema';
 
 export const schema = z.object({
   data: z.array(
@@ -82,6 +83,9 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       _weekDays = `${_weekDays}, e ${weekDays[weekDays.length - 1]}`;
     }
 
+    const facultiesResult = getFacultiesSchema.safeParse(faculties);
+    if (!facultiesResult.success) throw new Error(facultiesResult.error.message);
+
     return {
       name,
       slug,
@@ -94,11 +98,11 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       startDate: _startDate,
       price: _price,
       weekDays: _weekDays,
-      faculties,
+      faculties: facultiesResult.data,
     };
   });
 
   return result;
 });
 
-export const getCourseSchema = response;
+export const getCoursesSchema = response;
