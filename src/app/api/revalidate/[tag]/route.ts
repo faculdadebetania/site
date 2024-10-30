@@ -5,8 +5,8 @@ export async function POST(request: Request, { params }: { params: Promise<{ tag
   try {
     let { REVALIDATE_TOKEN } = process.env;
     const requestHeaders = new Headers(request.headers);
-    const token = requestHeaders.get('Authorization');
-    if (!token) return NextResponse.json({ message: 'Missing Authorization Header' }, { status: 403 });
+    const token = requestHeaders.get('Revalidate-Token');
+    if (!token) return NextResponse.json({ message: 'Missing Revalidate-Token Header' }, { status: 403 });
     if (REVALIDATE_TOKEN !== token) return NextResponse.json({ message: 'Invalid Token' }, { status: 401 });
     const { tag } = await params;
     revalidateTag(tag);
