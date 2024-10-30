@@ -1,20 +1,31 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { getCourse } from 'src/providers/course.provider';
 import CourseCurriculum from '../course-curriculum';
-import { CourseFaculty } from '../course-faculty';
+import { CourseFaculties } from '../course-faculty';
 import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValue, CourseFeatures } from '../course-features';
 import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo, CourseInfoVideo } from '../course-info';
 import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems, CourseLearnMoreTitle } from '../course-learn-more';
-import useCourse from '../course.hook';
 
 export const metadata = {
   title: 'Aconselhamento e Gestão de Pessoas - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays } =
-    await getCourse('comunicacao-que-transforma');
+  const {
+    startDate,
+    name,
+    category,
+    modality,
+    duration,
+    period,
+    price,
+    priceDisclaimer,
+    classSchedule,
+    weekDays,
+    curriculum,
+    faculties,
+  } = await getCourse('aconselhamento-e-gestao-de-pessoas');
 
   return (
     <main className="flex flex-col">
@@ -79,7 +90,7 @@ export default async function Page() {
           </section>
         </div>
       </CourseInfo>
-      <CourseCurriculum curriculum={useCourse('aconselhamento-e-gestao-de-pessoas').curriculum} />
+      <CourseCurriculum {...{ curriculum }} />
       <CourseLearnMore>
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
@@ -91,7 +102,7 @@ export default async function Page() {
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
-      <CourseFaculty id={'aconselhamento-e-gestao-de-pessoas'} />
+      <CourseFaculties {...{ faculties }} />
     </main>
   );
 }

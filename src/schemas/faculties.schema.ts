@@ -14,15 +14,20 @@ export const schema = z.object({
   meta: z.any(),
 });
 
-const response = schema.transform<Array<Faculty>>(({ data }) => {
-  const result = data.map<Faculty>(({ photo, ...faculty }) => {
+export function getFacultiesSchemaTransform(data: z.infer<typeof schema>['data']) {
+  const result = data.map<Faculty>(({ photo, academicBackground, ...faculty }) => {
+    const _academicBackground = academicBackground.split('\n');
+
     return {
       photoURL: photo.url,
+      academicBackground: _academicBackground,
       ...faculty,
     };
   });
 
   return result;
-});
+}
+
+const response = schema.transform<Array<Faculty>>(({ data }) => getFacultiesSchemaTransform(data));
 
 export const getFacultiesSchema = response;

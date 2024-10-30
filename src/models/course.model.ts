@@ -12,5 +12,6 @@ export interface Course {
   priceDisclaimer: string;
   weekDays: string;
   classSchedule: string;
+  curriculum?: Array<string>;
   faculties: Array<Faculty>;
 }

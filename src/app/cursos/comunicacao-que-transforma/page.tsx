@@ -11,8 +11,19 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays } =
-    await getCourse('comunicacao-que-transforma');
+  const {
+    startDate,
+    name,
+    category,
+    modality,
+    duration,
+    period,
+    price,
+    priceDisclaimer,
+    classSchedule,
+    weekDays,
+    faculties: [faculty],
+  } = await getCourse('comunicacao-que-transforma');
 
   return (
     <main className="flex flex-col">
@@ -99,7 +110,7 @@ export default async function Page() {
         <h1 className="uppercase text-5xl lg:text-7xl text-white font-bold">CORPO DOCENTE</h1>
         <section className="flex items-center gap-16">
           <Image
-            src="/imagens/corpo-docente/13.png"
+            src={faculty.photoURL}
             alt="docente"
             width={384}
             height={384}

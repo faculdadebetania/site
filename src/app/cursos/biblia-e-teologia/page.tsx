@@ -5,15 +5,14 @@ import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValu
 import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo } from '../course-info';
 import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems, CourseLearnMoreTitle } from '../course-learn-more';
-import useCourse from '../course.hook';
 
 export const metadata = {
   title: 'Bíblia e Teologia - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays } =
-    await getCourse('comunicacao-que-transforma');
+  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, curriculum } =
+    await getCourse('biblia-e-teologia');
 
   return (
     <main className="flex flex-col">
@@ -90,7 +89,7 @@ export default async function Page() {
           </section>
         </div>
       </CourseInfo>
-      <CourseCurriculum curriculum={useCourse('biblia-e-teologia').curriculum} />
+      <CourseCurriculum {...{ curriculum }} />
       <CourseLearnMore className="bg-white">
         <CourseLearnMoreTitle className="text-primary">Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>

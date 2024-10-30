@@ -3,6 +3,7 @@ import VLibras from '@components/a11y/vlibras';
 import ReCAPTCHA from '@components/forms/recaptcha';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
+import GoogleTagManager from '@utils/gtm';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <ReCAPTCHA />
         <A11y />
         <Analytics />
+        <GoogleTagManager />
         <SpeedInsights />
       </body>
     </html>

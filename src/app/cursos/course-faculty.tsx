@@ -32,8 +32,6 @@ export function CourseFaculties({ faculties }: Props) {
 export function CourseFaculty({ faculty }: { faculty: Faculty }) {
   const { name, academicBackground, photoURL } = faculty;
 
-  const _academicBackground = academicBackground.split('\n');
-
   return (
     <div className="flex flex-col !justify-start gap-4 h-full bg-white rounded-lg text-primary p-8 pb-10">
       <div className="flex items-center gap-4">
@@ -48,7 +46,7 @@ export function CourseFaculty({ faculty }: { faculty: Faculty }) {
       </div>
       <Separator className="!m-0 bg-neutral-300" />
       <ul className="flex flex-col gap-1">
-        {_academicBackground.map((degree, index) => (
+        {academicBackground.map((degree, index) => (
           <li key={index}>&middot;&nbsp;{degree}</li>
         ))}
       </ul>

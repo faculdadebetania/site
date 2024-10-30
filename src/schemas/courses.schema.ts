@@ -2,7 +2,7 @@ import { toLocaleDate } from '@utils/date';
 import capitalize from 'capitalize';
 import { Course } from 'src/models/course.model';
 import { z } from 'zod';
-import { getFacultiesSchema } from './faculties.schema';
+import { getFacultiesSchemaTransform } from './faculties.schema';
 
 export const schema = z.object({
   data: z.array(
@@ -21,6 +21,7 @@ export const schema = z.object({
       paymentRecurrence: z.enum(['mês', 'único']),
       startDateType: z.enum(['dia', 'mês']),
       classSchedule: z.string(),
+      curriculum: z.string().optional().nullable(),
       faculties: z.array(
         z.object({
           name: z.string(),
@@ -52,6 +53,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       modality,
       classSchedule,
       priceDisclaimer,
+      curriculum,
       faculties,
     } = course;
 
@@ -83,8 +85,12 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       _weekDays = `${_weekDays}, e ${weekDays[weekDays.length - 1]}`;
     }
 
-    const facultiesResult = getFacultiesSchema.safeParse(faculties);
-    if (!facultiesResult.success) throw new Error(facultiesResult.error.message);
+    let _curriculum;
+    if (curriculum) {
+      _curriculum = curriculum.split('\n');
+    }
+
+    let _faculties = getFacultiesSchemaTransform(faculties);
 
     return {
       name,
@@ -98,7 +104,8 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       startDate: _startDate,
       price: _price,
       weekDays: _weekDays,
-      faculties: facultiesResult.data,
+      curriculum: _curriculum,
+      faculties: _faculties,
     };
   });
 

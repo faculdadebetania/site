@@ -1,5 +1,5 @@
 export interface Faculty {
   name: string;
-  academicBackground: string;
+  academicBackground: Array<string>;
   photoURL: string;
 }

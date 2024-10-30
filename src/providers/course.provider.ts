@@ -26,7 +26,8 @@ export async function getCourse(slug: string): Promise<Course> {
 
 export async function getCourses(): Promise<Array<Course>> {
   const params = {
-    populate: '*',
+    'populate[0]': '*',
+    'populate[faculties][populate]': 'photo',
   };
 
   const response = await fetchCMS({
