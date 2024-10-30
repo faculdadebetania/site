@@ -6,12 +6,12 @@ export default function Hero() {
   return (
     <section className="container py-8 grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-center">
       <div className="flex flex-col content-center items-start gap-4">
-        <h1 className="uppercase text-5xl lg:text-7xl font-semibold">
+        <h1 className="uppercase text-4xl lg:text-7xl font-semibold">
           A <b>MELHOR</b> FORMAÇÃO <br />
           TEOLÓGICA DO&nbsp;
           <b className="text-secondary">PARANÁ</b>
         </h1>
-        <span className="text-lg lg:text-2xl">
+        <span className="text-md lg:text-2xl">
           <b className="text-secondary">Primeiro</b> lugar na avaliação do&nbsp;
           <b>ENADE/MEC</b> entre as instituições protestantes do&nbsp;
           <b>Paraná</b> e entre as <b>primeiras do Brasil</b>

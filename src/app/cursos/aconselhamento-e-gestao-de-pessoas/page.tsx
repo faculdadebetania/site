@@ -1,42 +1,38 @@
-import { notFound } from 'next/navigation';
+/* eslint-disable react-hooks/rules-of-hooks */
+import { getCourse } from 'src/providers/course.provider';
 import CourseCurriculum from '../course-curriculum';
-import { CourseFaculty } from '../course-faculty';
-import {
-  CourseFeature,
-  CourseFeatureIcon,
-  CourseFeatureTitle,
-  CourseFeatureValue,
-  CourseFeatures,
-} from '../course-features';
-import {
-  CourseHero,
-  CourseHeroAction,
-  CourseHeroBackground,
-  CourseHeroSubtitle,
-  CourseHeroTitle,
-} from '../course-hero';
+import { CourseFaculties } from '../course-faculty';
+import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValue, CourseFeatures } from '../course-features';
+import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo, CourseInfoVideo } from '../course-info';
-import {
-  CourseLearnMore,
-  CourseLearnMoreItem,
-  CourseLearnMoreItems,
-  CourseLearnMoreTitle,
-} from '../course-learn-more';
-import useCourse from '../course.hook';
+import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems, CourseLearnMoreTitle } from '../course-learn-more';
 
 export const metadata = {
   title: 'Aconselhamento e Gestão de Pessoas - Faculdade Teológica Betânia',
 };
 
-export default function Page() {
-  const course = useCourse('aconselhamento-e-gestao-de-pessoas');
-  if (!course) notFound();
+export default async function Page() {
+  const {
+    startDate,
+    name,
+    category,
+    modality,
+    duration,
+    period,
+    price,
+    priceDisclaimer,
+    classSchedule,
+    weekDays,
+    curriculum,
+    faculties,
+  } = await getCourse('aconselhamento-e-gestao-de-pessoas');
+
   return (
     <main className="flex flex-col">
       <CourseHero>
-        <CourseHeroBackground src={`/imagens/${course.id}/hero.jpg`} />
-        <CourseHeroTitle>{course.title}</CourseHeroTitle>
-        <CourseHeroSubtitle>{course.category}</CourseHeroSubtitle>
+        <CourseHeroBackground src={`/imagens/aconselhamento-e-gestao-de-pessoas/hero.jpg`} />
+        <CourseHeroTitle>{name}</CourseHeroTitle>
+        <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
         <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform">
           Inscrição
         </CourseHeroAction>
@@ -45,67 +41,56 @@ export default function Page() {
         <CourseFeature>
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
-          <CourseFeatureValue>{course.modality}</CourseFeatureValue>
-          <p className="text-sm">Previsão de início 12/09/2024</p>
+          <CourseFeatureValue>{modality}</CourseFeatureValue>
+          <p className="text-sm">Data de inicío: {startDate}</p>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Duração</CourseFeatureTitle>
-          <CourseFeatureValue>{course.duration}</CourseFeatureValue>
+          <CourseFeatureValue>{duration}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="Clock3" />
           <CourseFeatureTitle>Período</CourseFeatureTitle>
           <CourseFeatureValue>
-            {course.period}&nbsp;(19h-22h30)
+            {period}&nbsp;({classSchedule})
           </CourseFeatureValue>
-          <CourseFeatureValue className="text-sm">
-            quintas e sextas
-          </CourseFeatureValue>
+          <CourseFeatureValue className="text-sm">{weekDays}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature separator={false}>
           <CourseFeatureIcon name="DollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
-          <CourseFeatureValue>{course.price}*</CourseFeatureValue>
-          <CourseFeatureValue className="text-sm">
-            *Valor integral R$330, desconto de R$31 para pagamentos até o dia 10
-          </CourseFeatureValue>
+          <CourseFeatureValue>{price}</CourseFeatureValue>
+          <CourseFeatureValue className="text-sm">{priceDisclaimer}</CourseFeatureValue>
         </CourseFeature>
       </CourseFeatures>
       <CourseInfo>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
-          <CourseInfoVideo
-            source={`/videos/${course.id}.mp4`}
-            className="w-full lg:w-[512px]"
-          />
+          <CourseInfoVideo source={`/videos/aconselhamento-e-gestao-de-pessoas.mp4`} className="w-full lg:w-[512px]" />
           <section className="flex flex-col gap-4 text-section text-primary">
             <p>
-              Gerir pessoas é um dos maiores desafios, seja no ministério
-              cristão ou na vida profissional. Contudo é também o segredo de
-              sucesso em qualquer projeto. Pensando nisto, a FATEBE apresenta o
-              curso que o tornará um especialista na arte da gestão e
-              aconselhamento de pessoas. EXCELENTES PROFESSORES E PREÇO
-              ACESSÍVEL!
+              Gerir pessoas é um dos maiores desafios, seja no ministério cristão ou na vida profissional. Contudo é também o
+              segredo de sucesso em qualquer projeto. Pensando nisto, a FATEBE apresenta o curso que o tornará um especialista
+              na arte da gestão e aconselhamento de pessoas. EXCELENTES PROFESSORES E PREÇO ACESSÍVEL!
             </p>
             <section>
               <h4 className="uppercase font-bold">Público-alvo</h4>
               <p>
-                Líderes, gestores, pastores, educadores, conselheiros,
-                empresários, teólogos e profissionais com interesse na área.
+                Líderes, gestores, pastores, educadores, conselheiros, empresários, teólogos e profissionais com interesse na
+                área.
               </p>
             </section>
             <section>
               <h4 className="uppercase font-bold">Objetivo</h4>
               <p>
-                Capacitar pessoas para uma atuação mais dinâmica, eficaz e
-                preparada para a mediação de conflitos, liderança,
+                Capacitar pessoas para uma atuação mais dinâmica, eficaz e preparada para a mediação de conflitos, liderança,
                 aconselhamento e gestão de pessoas.
               </p>
             </section>
           </section>
         </div>
       </CourseInfo>
-      <CourseCurriculum curriculum={course.curriculum} />
+      <CourseCurriculum {...{ curriculum }} />
       <CourseLearnMore>
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
@@ -117,7 +102,7 @@ export default function Page() {
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
-      <CourseFaculty id={course.id} />
+      <CourseFaculties {...{ faculties }} />
     </main>
   );
 }

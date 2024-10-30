@@ -1,16 +1,18 @@
-import A11y from '@components/a11y';
-import ReCAPTCHA from '@components/recaptcha';
-import VLibras from '@components/vlibras';
+import A11y from '@components/a11y/a11y';
+import VLibras from '@components/a11y/vlibras';
+import ReCAPTCHA from '@components/forms/recaptcha';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
+import GoogleTagManager from '@utils/gtm';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import Contact from './contact';
-import { nunito, poppins } from './fonts';
-import Footer from './footer';
-import Header from './header';
-import Whatsapp from './whatsapp';
+import Contact from '../components/layout/contact';
+import { nunito, poppins } from '../components/layout/fonts';
+import Footer from '../components/layout/footer';
+import Header from '../components/layout/header';
+import Whatsapp from '../components/layout/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Faculdade Teológica Betânia',
@@ -19,20 +21,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html
-      lang="pt-BR"
-      className={cn(poppins.variable, nunito.variable, 'bg-primary')}
-    >
+    <html lang="pt-BR" className={cn(poppins.variable, nunito.variable, 'bg-primary')}>
       <body>
         <Header />
         {children}
         <Contact />
         <Footer />
         <Whatsapp />
-        <Analytics />
         <VLibras />
         <ReCAPTCHA />
         <A11y />
+        <Analytics />
+        <GoogleTagManager />
+        <SpeedInsights />
       </body>
     </html>
   );

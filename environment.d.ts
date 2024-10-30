@@ -4,5 +4,7 @@ namespace NodeJS {
     NEXT_PUBLIC_RECAPTCHA_KEY: string;
     OMBUDSMAN_EMAIL: string;
     OMBUDSMAN_EMAIL_PASSWORD: string;
+    CMS_API_URL: string;
+    CMS_API_TOKEN: string;
   }
 }
