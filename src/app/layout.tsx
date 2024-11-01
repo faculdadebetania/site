@@ -1,6 +1,5 @@
 import A11y from '@components/a11y/a11y';
 import VLibras from '@components/a11y/vlibras';
-import ReCAPTCHA from '@components/forms/recaptcha';
 import '@styles/global.scss';
 import { cn } from '@utils/cn';
 import GoogleTagManager from '@utils/gtm';
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Footer />
         <Whatsapp />
         <VLibras />
-        <ReCAPTCHA />
         <A11y />
         <Analytics />
         <GoogleTagManager />

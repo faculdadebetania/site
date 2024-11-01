@@ -1,3 +1,4 @@
+import ReCAPTCHA from '@components/forms/recaptcha';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,6 +25,7 @@ export default function Page() {
       </Breadcrumb>
       <h1 className="uppercase text-5xl font-bold ">OUVIDORIA</h1>
       <OmbudsmanForm />
+      <ReCAPTCHA />
     </main>
   );
 }
