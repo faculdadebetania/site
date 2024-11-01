@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@components/ui/breadcrumb';
-import OmbudsmanForm from './form';
+import ContactForm from './form';
 
 export default function Page() {
   return (
@@ -19,12 +19,12 @@ export default function Page() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Ouvidoria</BreadcrumbPage>
+            <BreadcrumbPage>Contato</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <h1 className="uppercase text-5xl font-bold ">OUVIDORIA</h1>
-      <OmbudsmanForm />
+      <h1 className="uppercase text-5xl font-bold ">CONTATO</h1>
+      <ContactForm />
       <ReCAPTCHA />
     </main>
   );
