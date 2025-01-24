@@ -264,8 +264,6 @@ function CarouselDots() {
     api.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
   }, [api, onInit, onSelect]);
 
-  console.log(scrollSnaps, selectedIndex);
-
   return (
     <div className="flex flex-wrap justify-end items-center absolute right-0 -bottom-12">
       {scrollSnaps.map((_, index) => (
