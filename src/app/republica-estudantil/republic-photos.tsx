@@ -19,6 +19,9 @@ export default function RepublicPhotos() {
                 </CarouselItem>
               ))}
           </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+          <CarouselDots />
         </Carousel>
       </section>
       <section className="flex flex-col gap-4">
