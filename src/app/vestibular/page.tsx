@@ -12,11 +12,7 @@ import {
   CourseHeroSubtitle,
   CourseHeroTitle,
 } from '@app/cursos/course-hero';
-import {
-  CourseLearnMore,
-  CourseLearnMoreItem,
-  CourseLearnMoreItems,
-} from '@app/cursos/course-learn-more';
+import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems } from '@app/cursos/course-learn-more';
 
 export default function Page() {
   return (
@@ -24,7 +20,7 @@ export default function Page() {
       <CourseHero>
         <CourseHeroBackground src={'/imagens/vestibular/hero.jpg'} />
         <CourseHeroTitle>VESTIBULAR TEOLOGIA</CourseHeroTitle>
-        <CourseHeroSubtitle>1º semestre / 2024</CourseHeroSubtitle>
+        <CourseHeroSubtitle>1º semestre / 2025</CourseHeroSubtitle>
         <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdASgDpRrWpWfpUtgXt9dHXD7Hml3odt1fU-1lKck1tQdhMag/viewform">
           Inscrição
         </CourseHeroAction>
@@ -68,10 +64,7 @@ export default function Page() {
           >
             Calendário Acadêmico
           </CourseLearnMoreItem>
-          <CourseLearnMoreItem
-            link="/cursos/teologia"
-            className="hover:bg-secondary"
-          >
+          <CourseLearnMoreItem link="/cursos/teologia" className="hover:bg-secondary">
             Sobre o Curso
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>

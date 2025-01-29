@@ -27,11 +27,11 @@ export default function Page() {
       <ul>
         <h2 className="text-2xl uppercase text-secondary">Alunos</h2>
         <Document href="/documentos/teologia/manual-do-aluno.pdf">Manual do Aluno</Document>
-        <Document href="/documentos/teologia/calendario-academico.pdf">Calendário Acadêmico 2024</Document>
+        <Document href="/documentos/teologia/calendario-academico.pdf">Calendário Acadêmico 2025</Document>
         <Separator className="!my-8" />
         <h2 className="text-2xl uppercase text-secondary">Para Vestibulandos</h2>
         <Document href="/documentos/teologia/manual-do-candidato.pdf">Manual do Candidato</Document>
-        <Document href="/documentos/teologia/edital-vestibular.pdf">Edital do Vestibular 2024</Document>
+        <Document href="/documentos/teologia/edital-vestibular.pdf">Edital do Vestibular 2025</Document>
         <Separator className="!my-8" />
         <h2 className="text-2xl uppercase text-secondary">Instituição</h2>
         <Document href="/documentos/relato-institucional.pdf">Relato Institucional</Document>
