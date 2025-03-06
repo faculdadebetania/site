@@ -2,7 +2,7 @@ import { toLocaleDate } from '@utils/date';
 import capitalize from 'capitalize';
 import { Course } from 'src/models/course.model';
 import { z } from 'zod';
-import { getFacultiesSchemaTransform } from './faculties.schema';
+import { transformFaculties } from './faculties.schema';
 
 export const schema = z.object({
   data: z.array(
@@ -90,7 +90,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       _curriculum = curriculum.split('\n');
     }
 
-    let _faculties = getFacultiesSchemaTransform(faculties);
+    let _faculties = transformFaculties(faculties);
 
     return {
       name,
@@ -112,4 +112,4 @@ const response = schema.transform<Array<Course>>(({ data }) => {
   return result;
 });
 
-export const getCoursesSchema = response;
+export const CourseSchema = response;

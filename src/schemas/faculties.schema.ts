@@ -14,7 +14,7 @@ export const schema = z.object({
   meta: z.any(),
 });
 
-export function getFacultiesSchemaTransform(data: z.infer<typeof schema>['data']) {
+export function transformFaculties(data: z.infer<typeof schema>['data']) {
   const result = data.map<Faculty>(({ photo, academicBackground, ...faculty }) => {
     const _academicBackground = academicBackground.split('\n');
 
@@ -28,6 +28,6 @@ export function getFacultiesSchemaTransform(data: z.infer<typeof schema>['data']
   return result;
 }
 
-const response = schema.transform<Array<Faculty>>(({ data }) => getFacultiesSchemaTransform(data));
+const response = schema.transform<Array<Faculty>>(({ data }) => transformFaculties(data));
 
-export const getFacultiesSchema = response;
+export const FacultiesSchema = response;
