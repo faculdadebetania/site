@@ -5,8 +5,8 @@ export default function Contact() {
   const href = `/contato`;
   return (
     <section className="container !py-4 flex justify-center items-center gap-4 text-lg font-medium bg-secondary text-black">
-      <p className="font-bold text-base break-normal">Precisa falar com a gente?</p>
-      <Button className="bg-neutral-200 rounded-full p-6 font-bold md:text-lg text-primary hover:text-white">
+      <p className="font-bold text-lg break-normal">Precisa falar com a gente?</p>
+      <Button className="bg-neutral-200 text-lg p-5 font-bold text-primary hover:text-white">
         <Link href={href}>Contato</Link>
       </Button>
     </section>

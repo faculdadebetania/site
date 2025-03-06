@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Course } from 'src/models/course.model';
-import { getCoursesSchema } from 'src/schemas/courses.schema';
+import { CourseSchema } from 'src/schemas/courses.schema';
 import { fetchCMS } from './cms.provider';
 
 export async function getCourse(slug: string): Promise<Course> {
@@ -13,7 +13,7 @@ export async function getCourse(slug: string): Promise<Course> {
   const response = await fetchCMS({
     uri: 'courses',
     method: 'GET',
-    schema: getCoursesSchema,
+    schema: CourseSchema,
     params,
   });
 
@@ -33,7 +33,7 @@ export async function getCourses(): Promise<Array<Course>> {
   const response = await fetchCMS({
     uri: 'courses',
     method: 'GET',
-    schema: getCoursesSchema,
+    schema: CourseSchema,
     params,
   });
 

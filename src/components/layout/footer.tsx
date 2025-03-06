@@ -89,17 +89,17 @@ export default function Footer() {
       <section className="text-zinc-700 flex flex-col md:flex-row items-center justify-between text-center px-2 pb-4 lg:px-8 lg:pb-6">
         <div>© {new Date().getFullYear()} Faculdade Teológica Betânia.</div>
         <div className="flex gap-4 justify-center">
-          <Button className="text-neutral-600 hover:opacity-50 hover:bg-neutral-500 h-10 w-10 hover:text-primary transition">
+          <Button className="text-neutral-300 hover:opacity-50 hover:bg-neutral-100 h-10 w-10 hover:text-primary transition">
             <Link href="https://www.instagram.com/faculdadebetania/">
               <Icon name="Instagram" size={64} className="!w-[24px] !h-[24px]" />
             </Link>
           </Button>
-          <Button className="text-neutral-600 hover:opacity-50 hover:bg-neutral-500 h-10 w-10 hover:text-primary transition">
+          <Button className="text-neutral-300 hover:opacity-50 hover:bg-neutral-100 h-10 w-10 hover:text-primary transition">
             <Link href="https://www.facebook.com/faculdadebetania">
               <Icon name="Facebook" size={64} className="!w-[24px] !h-[24px]" />
             </Link>
           </Button>
-          <Button className="text-neutral-600 hover:opacity-50 hover:bg-neutral-500 h-10 w-10 hover:text-primary transition">
+          <Button className="text-neutral-300 hover:opacity-50 hover:bg-neutral-100 h-10 w-10 hover:text-primary transition">
             <Link href="https://www.youtube.com/c/FaculdadeTeol%C3%B3gicaBet%C3%A2nia">
               <Icon name="Youtube" size={64} className="!w-[24px] !h-[24px]" />
             </Link>
