@@ -6,7 +6,7 @@ export interface Course {
   duration: string;
   startDate: string;
   modality: 'presencial' | 'presencial/online' | 'online';
-  category: 'bacharelado' | 'pós-graduação' | 'curso livre';
+  category: 'bacharelado' | 'pós-graduação' | 'curso livre' | 'extensão';
   name: string;
   slug: string;
   priceDisclaimer: string;

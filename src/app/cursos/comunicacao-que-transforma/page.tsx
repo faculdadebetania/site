@@ -1,10 +1,17 @@
 import { Separator } from '@components/ui/separator';
+import { capitalize } from '@utils/capitalize';
 import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
-import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValue, CourseFeatures } from '../course-features';
+import { CourseFeature, CourseFeatureIcon, CourseFeatures, CourseFeatureTitle, CourseFeatureValue } from '../course-features';
 import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo, CourseInfoVideo } from '../course-info';
-import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems } from '../course-learn-more';
+import {
+  CourseLearnMore,
+  CourseLearnMoreItem,
+  CourseLearnMoreItemIcon,
+  CourseLearnMoreItems,
+  CourseLearnMoreItemTitle,
+} from '../course-learn-more';
 
 export const metadata = {
   title: 'Comunicação que transforma - Faculdade Teológica Betânia',
@@ -45,8 +52,7 @@ export default async function Page() {
         <CourseFeature>
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
-          <CourseFeatureValue>{modality}</CourseFeatureValue>
-          <p className="text-sm">Data de início: {startDate}</p>
+          <CourseFeatureValue>{capitalize(modality)}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
@@ -61,11 +67,16 @@ export default async function Page() {
           </CourseFeatureValue>
           <CourseFeatureValue>{weekDays}</CourseFeatureValue>
         </CourseFeature>
-        <CourseFeature separator={false}>
-          <CourseFeatureIcon name="DollarSign" />
+        <CourseFeature>
+          <CourseFeatureIcon name="CircleDollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>{price}</CourseFeatureValue>
           <CourseFeatureValue>{priceDisclaimer}</CourseFeatureValue>
+        </CourseFeature>
+        <CourseFeature separator={false}>
+          <CourseFeatureIcon name="CirclePlay" />
+          <CourseFeatureTitle>Início</CourseFeatureTitle>
+          <CourseFeatureValue>{startDate}</CourseFeatureValue>
         </CourseFeature>
       </CourseFeatures>
       <CourseInfo>
@@ -99,16 +110,18 @@ export default async function Page() {
             link="https://forms.gle/gqa7rXb7Tsoz1mPN8"
             className="bg-white hover:opacity-75 text-primary uppercase !font-extrabold rounded-lg transition"
           >
-            Inscrição
+            <CourseLearnMoreItemIcon icon="ClipboardList" />
+            <CourseLearnMoreItemTitle>Inscrição</CourseLearnMoreItemTitle>
           </CourseLearnMoreItem>
-          <CourseLearnMoreItem link="http://moodle.faculdadebetania.com.br/" icon="User">
-            Portal do Aluno
+          <CourseLearnMoreItem link="http://moodle.faculdadebetania.com.br/">
+            <CourseLearnMoreItemIcon icon="User" />
+            <CourseLearnMoreItemTitle>Portal do Aluno</CourseLearnMoreItemTitle>
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
       <section className="container bg-primary flex flex-col gap-8" id="corpo-docente">
         <h1 className="uppercase text-5xl lg:text-7xl text-white font-bold">CORPO DOCENTE</h1>
-        <section className="flex items-center gap-16">
+        <section className="flex flex-col md:flex-row items-center gap-16">
           <Image
             src={faculty.photoURL}
             alt="docente"
@@ -117,7 +130,7 @@ export default async function Page() {
             className="relative border-secondary border-2 border-solid rounded-full"
           />
           <section className="flex flex-col gap-4">
-            <h3 className="uppercase font-bold text-secondary text-4xl">Rogério Souza</h3>
+            <h3 className="uppercase font-bold text-secondary text-3xl md:text-4xl">Rogério Souza</h3>
             <Separator className="bg-secondary !m-0 opacity-25" />
             <p>
               Pastor e professor por quase 20 anos. Formado em Teologia e com Bacharel e licenciatura em Filosofia pela UFPR.

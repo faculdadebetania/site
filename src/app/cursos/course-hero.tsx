@@ -5,32 +5,18 @@ import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
 export function CourseHero({ children }: PropsWithChildren) {
-  return (
-    <section className="container flex flex-col justify-end gap-4 h-[384px] lg:h-[448px]">
-      {children}
-    </section>
-  );
+  return <section className="container flex flex-col justify-end gap-4 h-[384px] lg:h-[448px]">{children}</section>;
 }
 
 export function CourseHeroTitle({ children }: PropsWithChildren) {
-  return (
-    <h1 className="uppercase text-5xl md:text-7xl font-extrabold break-words">
-      {children}
-    </h1>
-  );
+  return <h1 className="uppercase text-4xl md:text-7xl font-extrabold break-words">{children}</h1>;
 }
 
 export function CourseHeroSubtitle({ children }: PropsWithChildren) {
-  return (
-    <h3 className="uppercase text-xl font-bold text-secondary">{children}</h3>
-  );
+  return <h3 className="uppercase text-xl font-bold text-secondary">{children}</h3>;
 }
 
-export function CourseHeroAction({
-  href,
-  children,
-  className,
-}: PropsWithChildren<{ href: string; className?: string }>) {
+export function CourseHeroAction({ href, children, className }: PropsWithChildren<{ href: string; className?: string }>) {
   return (
     <Button
       asChild

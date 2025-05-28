@@ -2,17 +2,19 @@ import { cn } from '@utils/cn';
 import { PropsWithChildren, VideoHTMLAttributes, forwardRef } from 'react';
 
 export function CourseInfo({ children }: PropsWithChildren) {
-  return <section className="container bg-neutral-200">{children}</section>;
+  return (
+    <section className="container bg-neutral-200 space-y-4">
+      <h1 className="font-bold text-4xl lg:text-7xl uppercase text-primary">SOBRE O CURSO</h1>
+      {children}
+    </section>
+  );
 }
 
 type CourseInfoVideoProps = {
   source: string;
   width?: number;
 } & VideoHTMLAttributes<HTMLVideoElement>;
-export const CourseInfoVideo = forwardRef<
-  HTMLVideoElement,
-  CourseInfoVideoProps
->(function CourseInfoVideo(
+export const CourseInfoVideo = forwardRef<HTMLVideoElement, CourseInfoVideoProps>(function CourseInfoVideo(
   { source, width, className, ...props }: CourseInfoVideoProps,
   ref
 ) {
