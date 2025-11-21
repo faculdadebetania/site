@@ -18,7 +18,7 @@ export function CourseCard({ course }: Props) {
     backgroundColor = 'bg-secondary';
   }
 
-  if (category === 'curso livre') {
+  if (category === 'curso livre' || category === 'extensão') {
     backgroundColor = 'bg-primary';
     textColor = 'text-neutral-200';
   }
@@ -27,7 +27,7 @@ export function CourseCard({ course }: Props) {
     <Link
       href={`/cursos/${slug}`}
       className={cn(
-        'flex flex-col justify-between min-h-[300px] gap-4 p-8 rounded-lg hover:opacity-80 transition border-white border-[1px] border-solid',
+        'flex flex-col justify-between min-h-[300px] h-full gap-4 p-8 rounded-lg hover:opacity-80 transition border-white border-[1px] border-solid',
         backgroundColor,
         textColor
       )}

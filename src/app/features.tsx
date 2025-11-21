@@ -41,7 +41,7 @@ const features: Array<Feature> = [
   {
     id: 'experience',
     title: 'Experiência e Credibilidade',
-    image: '/imagens/plus.png',
+    image: '/imagens/verified.png',
     text: `A Betânia tem 75 anos de história e experiência na formação teológica e
     milhares de alunos formados trabalhando em diversas áreas, no Brasil e em dezenas de países.`,
     link: '/a-faculdade',
@@ -56,12 +56,12 @@ export default function Features() {
   }
 
   return (
-    <section className="container grid grid-col-1 gap-16 lg:grid-cols-2 bg-neutral-200">
+    <section className="container grid grid-col-1 gap-4 lg:gap-16 lg:grid-cols-2 bg-neutral-200">
       <div className="flex flex-col gap-4 text-primary">
         <h2 className="uppercase text-4xl lg:text-7xl font-bold">PORQUE VOCÊ DEVE ESTUDAR AQUI?</h2>
         <span className="text-md lg:text-2xl transition" dangerouslySetInnerHTML={{ __html: active.text }} />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-2 md:gap-4">
         {features.map((feature) => (
           <FeatureItem
             data-active={active === feature}
@@ -97,7 +97,7 @@ const FeatureItem = forwardRef<HTMLAnchorElement, FeatureItemProps>(function Fea
       {...props}
       onMouseOver={onMouseOver}
       className={cn(
-        'flex flex-col items-center gap-4 bg-slate-900 cursor-pointer rounded-lg p-8 hover:opacity-50 transition whitespace-nowrap',
+        'flex flex-col items-center justify-center p-4 lg:p-8 gap-4 bg-slate-900 cursor-pointer rounded-lg hover:opacity-50 transition whitespace-nowrap',
         className
       )}
     >
@@ -116,10 +116,15 @@ function FeatureItemImage({ src }: { src: string }) {
       style={{
         filter: 'invert(99%) sepia(1%) saturate(321%) hue-rotate(202deg) brightness(116%) contrast(100%)',
       }}
+      className="w-12 h-12 lg:w-[72px] lg:h-[72px] object-contain"
     />
   );
 }
 
 function FeatureItemTitle({ children }: PropsWithChildren) {
-  return <h3 className="relative uppercase font-semibold text-md break-all md:text-lg">{children}</h3>;
+  return (
+    <h3 className="text-center relative uppercase font-semibold text-xs break-words whitespace-break-spaces md:text-lg">
+      {children}
+    </h3>
+  );
 }

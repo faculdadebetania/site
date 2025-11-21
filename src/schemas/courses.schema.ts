@@ -13,7 +13,7 @@ export const schema = z.object({
       durationUnit: z.enum(['dias', 'meses', 'anos']),
       startDate: z.coerce.date(),
       modality: z.enum(['presencial', 'presencial/online', 'online']),
-      category: z.enum(['bacharelado', 'pós-graduação', 'curso livre']),
+      category: z.enum(['bacharelado', 'pós-graduação', 'curso livre', 'extensão']),
       name: z.string(),
       slug: z.string(),
       priceDisclaimer: z.string(),
@@ -75,7 +75,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
 
     _startDate = _startDate.replace(/\sde\s/g, String.fromCharCode(32));
 
-    let _price = `R$ ${price}`;
+    let _price = `R$${Number(price).toLocaleString('pt-BR')}`;
     if (paymentRecurrence === 'mês') _price = `${_price} / mês`;
 
     let _weekDays = weekDays[0].toString();

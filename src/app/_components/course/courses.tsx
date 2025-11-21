@@ -9,7 +9,8 @@ export default async function Courses() {
   const order = [
     'teologia',
     'aconselhamento-e-gestao-de-pessoas',
-    'biblia-e-teologia',
+    'biblia-teologia-e-formacao-ministerial',
+    'teologia-e-formacao-ministerial',
     'capelania',
     'comunicacao-que-transforma',
   ];
@@ -24,11 +25,12 @@ export default async function Courses() {
         </span>
       </div>
       <Carousel>
-        <CarouselContent>
+        <CarouselContent className="px-2">
           {order.map((slug) => {
             const course = courses.find((course) => course.slug === slug) as Course;
+            console.log(course);
             return (
-              <CarouselItem key={course.slug} className="basis-full md:basis-1/2 lg:basis-1/4">
+              <CarouselItem key={course.slug} className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <CourseCard course={course} />
               </CarouselItem>
             );

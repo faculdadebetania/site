@@ -1,11 +1,19 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { capitalize } from '@utils/capitalize';
 import { getCourse } from 'src/providers/course.provider';
 import CourseCurriculum from '../course-curriculum';
 import { CourseFaculties } from '../course-faculty';
-import { CourseFeature, CourseFeatureIcon, CourseFeatureTitle, CourseFeatureValue, CourseFeatures } from '../course-features';
+import { CourseFeature, CourseFeatureIcon, CourseFeatures, CourseFeatureTitle, CourseFeatureValue } from '../course-features';
 import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroTitle } from '../course-hero';
 import { CourseInfo, CourseInfoVideo } from '../course-info';
-import { CourseLearnMore, CourseLearnMoreItem, CourseLearnMoreItems, CourseLearnMoreTitle } from '../course-learn-more';
+import {
+  CourseLearnMore,
+  CourseLearnMoreItem,
+  CourseLearnMoreItemIcon,
+  CourseLearnMoreItems,
+  CourseLearnMoreItemTitle,
+  CourseLearnMoreTitle,
+} from '../course-learn-more';
 
 export const metadata = {
   title: 'Aconselhamento e Gestão de Pessoas - Faculdade Teológica Betânia',
@@ -41,8 +49,7 @@ export default async function Page() {
         <CourseFeature>
           <CourseFeatureIcon name="PanelBottom" />
           <CourseFeatureTitle>Modalidade</CourseFeatureTitle>
-          <CourseFeatureValue>{modality}</CourseFeatureValue>
-          <p className="text-sm">Data de inicío: {startDate}</p>
+          <CourseFeatureValue>{capitalize(modality)}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CalendarDays" />
@@ -57,11 +64,16 @@ export default async function Page() {
           </CourseFeatureValue>
           <CourseFeatureValue className="text-sm">{weekDays}</CourseFeatureValue>
         </CourseFeature>
-        <CourseFeature separator={false}>
-          <CourseFeatureIcon name="DollarSign" />
+        <CourseFeature>
+          <CourseFeatureIcon name="CircleDollarSign" />
           <CourseFeatureTitle>Valor</CourseFeatureTitle>
           <CourseFeatureValue>{price}</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">{priceDisclaimer}</CourseFeatureValue>
+        </CourseFeature>
+        <CourseFeature separator={false}>
+          <CourseFeatureIcon name="CirclePlay" />
+          <CourseFeatureTitle>Início</CourseFeatureTitle>
+          <CourseFeatureValue>{startDate}</CourseFeatureValue>
         </CourseFeature>
       </CourseFeatures>
       <CourseInfo>
@@ -98,7 +110,8 @@ export default async function Page() {
             link="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform"
             className="bg-white hover:opacity-75 text-primary uppercase !font-extrabold rounded-lg transition"
           >
-            Inscrição
+            <CourseLearnMoreItemIcon icon="ClipboardList" />
+            <CourseLearnMoreItemTitle>Inscrição</CourseLearnMoreItemTitle>
           </CourseLearnMoreItem>
         </CourseLearnMoreItems>
       </CourseLearnMore>
