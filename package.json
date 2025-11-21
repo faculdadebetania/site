@@ -10,7 +10,7 @@
     "prepare": "husky"
   },
   "engines": {
-    "node": "20.x.x",
+    "node": "22.x.x",
     "npm": "10.x.x"
   },
   "dependencies": {
