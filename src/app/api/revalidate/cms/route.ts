@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const token = requestHeaders.get('Revalidate-Token');
     if (!token) return NextResponse.json({ message: 'Missing Revalidate-Token Header' }, { status: 403 });
     if (REVALIDATE_TOKEN !== token) return NextResponse.json({ message: 'Invalid Token' }, { status: 401 });
-    revalidateTag('cms');
+    revalidateTag('cms', 'max');
     return NextResponse.json({ message: 'Success' });
   } catch (error) {
     const message = (error as Error).message ?? error;
