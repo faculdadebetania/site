@@ -23,7 +23,6 @@ import {
   CourseLearnMoreTitle,
 } from '@app/cursos/course-learn-more';
 import { capitalize } from '@utils/capitalize';
-import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
 
 export const metadata = {
@@ -42,9 +41,6 @@ export default async function Page() {
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
         <div className="flex justify-between items-center gap-4">
           <CourseHeroAction href="https://forms.gle/mMQGhhjee42YpmHd8">Inscrição</CourseHeroAction>
-          <div className="bg-white w-32 h-12 md:w-48 md:h-16 relative rounded-lg">
-            <Image fill src="/imagens/unise-logo.png" alt="unise-logo" className="object-contain p-2" />
-          </div>
         </div>
       </CourseHero>
       <CourseFeatures>
