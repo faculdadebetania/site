@@ -16,7 +16,7 @@ interface Feature {
 const features: Array<Feature> = [
   {
     id: 'reputable',
-    title: 'Reconhecido',
+    title: 'Reconhecido pelo MEC',
     image: '/imagens/award.png',
     text: `Cursos <b>reconhecidos</b> pelo MEC e em <b>primeiro lugar</b> na avaliação do ENADE/MEC
       entre as instituições protestantes do Paraná e entre as <b>primeiras do Brasil</b>.`,
