@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { capitalize } from '@utils/capitalize';
+import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
 import CourseCurriculum from '../course-curriculum';
 import { CourseFaculties } from '../course-faculty';
@@ -41,9 +42,19 @@ export default async function Page() {
         <CourseHeroBackground src={`/imagens/aconselhamento-e-gestao-de-pessoas/hero.jpg`} />
         <CourseHeroTitle>{name}</CourseHeroTitle>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
-        <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform">
-          Inscrição
-        </CourseHeroAction>
+        <div className="flex items-center justify-between w-full">
+          <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform">
+            Inscrição
+          </CourseHeroAction>
+
+          <Image
+            src="/imagens/aconselhamento-e-gestao-de-pessoas/logo-unise.svg"
+            alt="Logo UNISE"
+            width={180}
+            height={180}
+            className="object-contain bg-white rounded-xl px-4 py-2 mr-11"
+          />
+        </div>
       </CourseHero>
       <CourseFeatures>
         <CourseFeature>

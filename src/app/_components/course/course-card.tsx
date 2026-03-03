@@ -10,6 +10,7 @@ type Props = {
 
 export function CourseCard({ course }: Props) {
   const { category, duration, name, period, price, slug, startDate } = course;
+  let displayStartDate = 'Data de início';
 
   let backgroundColor = 'bg-neutral-200';
   let textColor = 'text-primary';
@@ -23,6 +24,15 @@ export function CourseCard({ course }: Props) {
     textColor = 'text-neutral-200';
   }
 
+  const displayCategory =
+  category === 'curso livre'
+    ? 'curso de extensão universitária'
+    : category;
+
+  if (['Comunicação que transforma', 'Capelania'].some(courseName => name.includes(courseName))) {
+    displayStartDate = 'Previsão de início';
+  }
+
   return (
     <Link
       href={`/cursos/${slug}`}
@@ -33,7 +43,7 @@ export function CourseCard({ course }: Props) {
       )}
     >
       <section>
-        <h6 className="uppercase font-bold text-sm opacity-70">{category}</h6>
+        <h6 className="uppercase font-bold text-sm opacity-70">{displayCategory}</h6>
         <h4 className="font-bold text-xl min-h-14">{name}</h4>
       </section>
       <section>
@@ -45,7 +55,7 @@ export function CourseCard({ course }: Props) {
           Período:&nbsp;<b>{period}</b>
         </div>
         <div>
-          Data de início:&nbsp;<b>{startDate}</b>
+          {displayStartDate}:&nbsp;<b>{startDate}</b>
         </div>
       </section>
       <Separator className="!m-0" />

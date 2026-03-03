@@ -9,6 +9,7 @@ interface Feature {
   id: string;
   image: string;
   link: string;
+  target?: string;
   title: string;
   text: string;
 }
@@ -16,11 +17,12 @@ interface Feature {
 const features: Array<Feature> = [
   {
     id: 'reputable',
-    title: 'Reconhecido',
+    title: 'Reconhecido pelo MEC',
     image: '/imagens/award.png',
     text: `Cursos <b>reconhecidos</b> pelo MEC e em <b>primeiro lugar</b> na avaliação do ENADE/MEC
       entre as instituições protestantes do Paraná e entre as <b>primeiras do Brasil</b>.`,
-    link: '#',
+    link: '/e-mec',
+    target: '_blank',
   },
   {
     id: 'faculty',
@@ -36,7 +38,7 @@ const features: Array<Feature> = [
     image: '/imagens/puzzle.png',
     text: `Na FATEBE temos professores e alunos de diferentes denominações e você estuda as
     diferentes visões teológicas e interpretações bíblicas sobre diversos assuntos.`,
-    link: '#',
+    link: '/interdenominacional',
   },
   {
     id: 'experience',
@@ -67,6 +69,7 @@ export default function Features() {
             data-active={active === feature}
             key={feature.id}
             link={feature.link}
+            target={feature.target}
             onMouseOver={() => handleMouseOver(feature)}
             className="data-[active=true]:bg-secondary"
           >
