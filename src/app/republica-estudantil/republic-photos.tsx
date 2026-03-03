@@ -19,9 +19,16 @@ export default function RepublicPhotos() {
                 </CarouselItem>
               ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-          <CarouselDots />
+          <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center gap-3">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+              <span className="text-sm text-gray-600">
+                Clique aqui para ir para próxima foto
+              </span>
+            </div>
+            <CarouselDots />
+          </div>
         </Carousel>
       </section>
       <section className="flex flex-col gap-4">
@@ -36,9 +43,16 @@ export default function RepublicPhotos() {
                 </CarouselItem>
               ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-          <CarouselDots />
+          <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center gap-3">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+              <span className="text-sm text-gray-600">
+                Clique aqui para ir para próxima foto
+              </span>
+            </div>
+            <CarouselDots />
+          </div>
         </Carousel>
       </section>
     </section>
