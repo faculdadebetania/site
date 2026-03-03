@@ -9,7 +9,7 @@ export default function RepublicPhotos() {
       <h1 className="uppercase text-5xl lg:text-7xl font-extrabold">CONHEÇA NOSSAS REPÚBLICAS</h1>
       <section className="flex flex-col gap-4">
         <span className="text-3xl lg:text-5xl font-extrabold text-secondary">República Feminina</span>
-        <Carousel>
+        <Carousel controlsLayout="inline">
           <CarouselContent>
             {Array(7)
               .fill(0)
@@ -33,7 +33,7 @@ export default function RepublicPhotos() {
       </section>
       <section className="flex flex-col gap-4">
         <span className="text-3xl lg:text-5xl font-extrabold text-secondary">República Masculina</span>
-        <Carousel>
+        <Carousel controlsLayout="inline">
           <CarouselContent>
             {Array(11)
               .fill(0)

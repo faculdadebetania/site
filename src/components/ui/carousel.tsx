@@ -18,6 +18,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: 'horizontal' | 'vertical';
   setApi?: (api: CarouselApi) => void;
+  controlsLayout?: 'overlay' | 'inline';
 };
 
 type CarouselContextProps = {
@@ -27,6 +28,7 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+  controlsLayout?: 'overlay' | 'inline';
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -42,7 +44,7 @@ function useCarousel() {
 }
 
 const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CarouselProps>(
-  ({ orientation = 'horizontal', opts, setApi, plugins, className, children, ...props }, ref) => {
+  ({ orientation = 'horizontal', controlsLayout = 'overlay', opts, setApi, plugins, className, children, ...props }, ref) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
@@ -117,6 +119,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          controlsLayout
         }}
       >
         <div
@@ -133,7 +136,6 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     );
   }
 );
-Carousel.displayName = 'Carousel';
 
 const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
@@ -168,7 +170,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
 CarouselItem.displayName = 'CarouselItem';
 
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
-  ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
+  ({ className, controlsLayout, variant = 'outline', size = 'icon', ...props }, ref) => {
     const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
     return (
@@ -178,7 +180,10 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         size={size}
         className={cn(
           'absolute h-8 w-8 rounded-full',
-          orientation === 'horizontal' ? 'left-0 -bottom-12' : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+          controlsLayout === 'overlay' &&
+          (orientation === 'horizontal'
+            ? 'absolute left-0 -bottom-12'
+            : '-top-12 left-1/2 -translate-x-1/2 rotate-90'),
           className
         )}
         disabled={!canScrollPrev}
@@ -194,7 +199,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
 CarouselPrevious.displayName = 'CarouselPrevious';
 
 const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
-  ({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
+  ({ className, controlsLayout, variant = 'outline', size = 'icon', ...props }, ref) => {
     const { orientation, scrollNext, canScrollNext } = useCarousel();
 
     return (
@@ -204,7 +209,10 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         size={size}
         className={cn(
           'absolute h-8 w-8 rounded-full',
-          orientation === 'horizontal' ? 'left-12 -bottom-12' : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+          controlsLayout === 'overlay' &&
+          (orientation === 'horizontal'
+            ? 'absolute left-12 -bottom-12'
+            : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90'),
           className
         )}
         disabled={!canScrollNext}
@@ -237,7 +245,7 @@ function CarouselDots() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
 
-  const { api } = useCarousel();
+  const { api, controlsLayout } = useCarousel();
 
   const onDotButtonClick = React.useCallback(
     (index: number) => {
@@ -265,7 +273,12 @@ function CarouselDots() {
   }, [api, onInit, onSelect]);
 
   return (
-    <div className="flex flex-wrap justify-end items-center absolute right-0 -bottom-12">
+    <div
+      className={cn(
+        'flex flex-wrap items-center gap-1',
+        controlsLayout === 'overlay' && 'absolute right-0 -bottom-12'
+      )}
+    >
       {scrollSnaps.map((_, index) => (
         <DotButton
           key={index}
