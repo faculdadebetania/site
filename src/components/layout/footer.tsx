@@ -49,7 +49,7 @@ export default function Footer() {
               <Link href="/cursos/comunicacao-que-transforma">Comunicação que transforma</Link>
             </li>
             <li>
-              <Link href="cursos/biblia-e-teologia">Bíblia e Teologia</Link>
+              <Link href="/cursos/biblia-teologia-e-formacao-ministerial">Bíblia, Teologia e Formação Ministerial</Link>
             </li>
           </ul>
         </section>
@@ -57,7 +57,7 @@ export default function Footer() {
           <h3 className="font-bold uppercase">INSTITUIÇÃO</h3>
           <ul className="flex flex-col gap-1">
             <li>
-              <Link href="/a-faculdade">A Faculdade</Link>
+              <Link href="/quem-somos">A Faculdade</Link>
             </li>
             <li>
               <Link href="/corpo-docente">Corpo Docente</Link>

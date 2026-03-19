@@ -34,6 +34,13 @@ export function NavDesktop() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <Link href="/quem-somos" legacyBehavior passHref>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'hover:bg-inherit h-auto')}>
+                QUEM SOMOS
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <Link href="/#cursos" legacyBehavior passHref>
               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'hover:bg-inherit h-auto')}>
                 CURSOS

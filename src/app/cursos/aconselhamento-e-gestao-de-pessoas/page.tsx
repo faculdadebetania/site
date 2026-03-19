@@ -42,18 +42,37 @@ export default async function Page() {
         <CourseHeroBackground src={`/imagens/aconselhamento-e-gestao-de-pessoas/hero.jpg`} />
         <CourseHeroTitle>{name}</CourseHeroTitle>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
-        <div className="flex items-center justify-between w-full">
-          <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform">
-            Inscrição
-          </CourseHeroAction>
-
-          <Image
-            src="/imagens/aconselhamento-e-gestao-de-pessoas/logo-unise.svg"
-            alt="Logo UNISE"
-            width={180}
-            height={180}
-            className="object-contain bg-white rounded-xl px-4 py-2 mr-11"
-          />
+        <div className="flex flex-col lg:flex-row items-center w-full gap-4">
+          <div className="shrink-0 w-full lg:w-auto">
+            <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdQL625muJpl5pJqman_wsZGq5xl1RV5dLW-kd86tBT9KgpSQ/viewform">
+              Inscrição
+            </CourseHeroAction>
+          </div>
+          <div className="bg-[#080f1c] rounded-[24px] p-4 w-full max-w-[380px] lg:ml-auto">
+            <span className="text-white font-bold text-lg block text-center">
+              Parceria:
+            </span>
+            <div className="flex items-end justify-center gap-6">
+              <div className="h-[45px] flex items-end">
+                <Image
+                  src={`/imagens/logo.png`}
+                  alt="Fatebe"
+                  width={200}
+                  height={50}
+                  className="object-contain h-full w-auto"
+                />
+              </div>
+              <div className="h-[40px] flex items-end">
+                <Image
+                  src={`/imagens/unise-logo-branca-removebg-preview.png`}
+                  alt="Unise"
+                  width={100}
+                  height={30}
+                  className="object-contain h-full w-auto"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </CourseHero>
       <CourseFeatures>
