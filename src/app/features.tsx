@@ -46,7 +46,7 @@ const features: Array<Feature> = [
     image: '/imagens/verified.png',
     text: `A Betânia tem 75 anos de história e experiência na formação teológica e
     milhares de alunos formados trabalhando em diversas áreas, no Brasil e em dezenas de países.`,
-    link: '/quem-somos',
+    link: '/a-faculdade',
   },
 ];
 
