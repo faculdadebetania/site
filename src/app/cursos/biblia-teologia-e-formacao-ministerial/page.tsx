@@ -23,6 +23,7 @@ import {
   CourseLearnMoreTitle,
 } from '@app/cursos/course-learn-more';
 import { capitalize } from '@utils/capitalize';
+import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
 
 export const metadata = {
@@ -39,7 +40,34 @@ export default async function Page() {
         <CourseHeroBackground src={'/imagens/biblia-teologia-e-formacao-ministerial/hero.jpg'} />
         <CourseHeroTitle>{name}</CourseHeroTitle>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
-        <CourseHeroAction href="https://forms.gle/f7CxDuhSmiwDyGrr6">Inscrição</CourseHeroAction>
+        <div className="shrink-0 w-full lg:w-auto">
+          <CourseHeroAction href="https://forms.gle/f7CxDuhSmiwDyGrr6">Inscrição</CourseHeroAction>
+        </div>
+        <div className="bg-[#080f1c] rounded-[24px] p-4 w-full max-w-[380px] lg:ml-auto">
+          <span className="text-white font-bold text-lg block text-center">
+            Parceria:
+          </span>
+          <div className="flex items-end justify-center gap-6">
+            <div className="h-[45px] flex items-end">
+              <Image
+                src={`/imagens/logo.png`}
+                alt="Fatebe"
+                width={200}
+                height={50}
+                className="object-contain h-full w-auto"
+              />
+            </div>
+            <div className="h-[40px] flex items-end">
+              <Image
+                src={`/imagens/unise-logo-branca-removebg-preview.png`}
+                alt="Unise"
+                width={100}
+                height={30}
+                className="object-contain h-full w-auto"
+              />
+            </div>
+          </div>
+        </div>
       </CourseHero>
       <CourseFeatures>
         <CourseFeature>
