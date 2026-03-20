@@ -44,7 +44,7 @@ export default async function Page() {
             A <strong>Editora Betânia</strong>, fundada no Brasil em 1965, iniciou suas atividades com a publicação da revista <strong>Mensagem da Cruz</strong>, que continua circulando no mundo de língua portuguesa e impactando a vida de milhares de pessoas. Atualmente sediada em Curitiba, ao lado da FATEBE, a editora dedica-se à produção e distribuição de literatura cristã voltada à edificação da Igreja e à formação de líderes.
           </p>
           <p>
-            Por meio de seus diversos ministérios, a Missão Evangélica Betânia permanece comprometida com sua missão de formar líderes, fortalecer a Igreja e contribuir para a expansão do Reino de Deus no Brasil e no mundo.
+            Por meio de seus diversos ministérios, a Missão Evangélica Betânia permanece comprometida com sua missão de formar líderes, fortalecer a Igreja e contribuir para a expansão do Reino de Deus no Brasil e no mundo...
           </p>
         </div>
       </section>
