@@ -20,7 +20,7 @@ export default function Page() {
       <CourseHero>
         <CourseHeroBackground src={'/imagens/vestibular/hero.jpg'} />
         <CourseHeroTitle>VESTIBULAR TEOLOGIA</CourseHeroTitle>
-        <CourseHeroSubtitle>1º semestre / 2026</CourseHeroSubtitle>
+        <CourseHeroSubtitle>2º semestre / 2026</CourseHeroSubtitle>
         <CourseHeroAction href="https://docs.google.com/forms/d/e/1FAIpQLSdASgDpRrWpWfpUtgXt9dHXD7Hml3odt1fU-1lKck1tQdhMag/viewform">
           Inscrição
         </CourseHeroAction>
