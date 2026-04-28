@@ -27,7 +27,7 @@ import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
 
 export const metadata = {
-  title: 'Teologia e Formação Ministerial - Faculdade Teológica Betânia',
+  title: 'Bíblia, Teologia e Formação Ministerial - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
@@ -41,7 +41,7 @@ export default async function Page() {
         <CourseHeroTitle>{name}</CourseHeroTitle>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
         <div className="shrink-0 w-full lg:w-auto">
-          <CourseHeroAction href="https://forms.gle/f7CxDuhSmiwDyGrr6">Inscrição</CourseHeroAction>
+          <CourseHeroAction href="https://forms.gle/g2LLrFP9aCyagYVc9">Inscrição</CourseHeroAction>
         </div>
         <div className="bg-[#080f1c] rounded-[24px] p-4 w-full max-w-[380px] lg:ml-auto">
           <span className="text-white font-bold text-lg block text-center">
@@ -125,7 +125,7 @@ export default async function Page() {
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
           <CourseLearnMoreItem
-            link="https://docs.google.com/forms/d/e/1FAIpQLSdASgDpRrWpWfpUtgXt9dHXD7Hml3odt1fU-1lKck1tQdhMag/viewform"
+            link="https://forms.gle/g2LLrFP9aCyagYVc9"
             className="bg-white hover:opacity-75 text-primary uppercase !font-extrabold rounded-lg transition"
           >
             <CourseLearnMoreItemIcon icon="ClipboardList" />

@@ -53,6 +53,7 @@ export default function Page() {
         <Document href="/documentos/cpa/relatorio-cpa-2020.pdf">Relatório CPA 2020</Document>
         <Document href="/documentos/cpa/relatorio-cpa-2017.pdf">Relatório CPA 2017</Document>
         <h3 className="text-xl uppercase font-bold tracking-wider mt-8">Parciais</h3>
+        <Document href="/documentos/cpa/relatorio-cpa-parcial-2025.pdf">Relatório CPA 2025</Document>
         <Document href="/documentos/cpa/relatorio-cpa-parcial-2024.pdf">Relatório CPA 2024</Document>
         <Document href="/documentos/cpa/relatorio-cpa-parcial-2022.pdf">Relatório CPA 2022</Document>
         <Document href="/documentos/cpa/relatorio-cpa-parcial-2021.pdf">Relatório CPA 2021</Document>
