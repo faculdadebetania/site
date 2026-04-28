@@ -26,7 +26,7 @@ import { capitalize } from '@utils/capitalize';
 import { getCourse } from 'src/providers/course.provider';
 
 export const metadata = {
-  title: 'Teologia e Formação Ministerial - Faculdade Teológica Betânia',
+  title: 'Bíblia, Teologia e Formação Ministerial - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
@@ -40,7 +40,7 @@ export default async function Page() {
         <CourseHeroTitle>{name}</CourseHeroTitle>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
         <div className="flex justify-between items-center gap-4">
-          <CourseHeroAction href="https://forms.gle/mMQGhhjee42YpmHd8">Inscrição</CourseHeroAction>
+          <CourseHeroAction href="https://forms.gle/mEZMFK6o5K6JEFso8">Inscrição</CourseHeroAction>
         </div>
       </CourseHero>
       <CourseFeatures>
@@ -109,7 +109,7 @@ export default async function Page() {
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
           <CourseLearnMoreItem
-            link="https://docs.google.com/forms/d/e/1FAIpQLSdASgDpRrWpWfpUtgXt9dHXD7Hml3odt1fU-1lKck1tQdhMag/viewform"
+            link="https://forms.gle/mEZMFK6o5K6JEFso8"
             className="bg-white hover:opacity-75 text-primary uppercase !font-extrabold rounded-lg transition"
           >
             <CourseLearnMoreItemIcon icon="ClipboardList" />
