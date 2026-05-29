@@ -7,6 +7,13 @@ import {
   CourseFeatureValue,
 } from '@app/cursos/course-features';
 import {
+  CourseFeedback,
+  CourseFeedbackBubble,
+  CourseFeedbackHeader,
+  CourseFeedbacks,
+  CourseFeedbackText,
+} from '@app/cursos/course-feedback';
+import {
   CourseHero,
   CourseHeroAction,
   CourseHeroBackground,
@@ -121,6 +128,65 @@ export default async function Page() {
           </p>
         </div>
       </CourseInfo>
+<CourseFeedbacks>
+  <CourseFeedback>
+    <CourseFeedbackHeader
+      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
+      name="Gabriel Silva"
+      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+    />
+
+    <CourseFeedbackBubble>
+      <CourseFeedbackText>
+        Minha experiência no curso tem sido muito boa.
+        O site é bem intuitivo e as aulas ao vivo são um diferencial.
+        Fui surpreendido pela <strong>seriedade da instituição</strong> e
+        pela <strong>dedicação dos professores</strong>, que demonstram
+        cuidado não apenas em transmitir conhecimento teológico/bíblico,
+        mas também em contribuir para a nossa transformação pessoal.
+      </CourseFeedbackText>
+    </CourseFeedbackBubble>
+  </CourseFeedback>
+
+<CourseFeedback>
+    <CourseFeedbackHeader
+      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
+      name="Gabriel Silva"
+      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+    />
+
+    <CourseFeedbackBubble>
+      <CourseFeedbackText>
+        Minha experiência no curso tem sido muito boa.
+        O site é bem intuitivo e as aulas ao vivo são um diferencial.
+        Fui surpreendido pela <strong>seriedade da instituição</strong> e
+        pela <strong>dedicação dos professores</strong>, que demonstram
+        cuidado não apenas em transmitir conhecimento teológico/bíblico,
+        mas também em contribuir para a nossa transformação pessoal.
+      </CourseFeedbackText>
+    </CourseFeedbackBubble>
+  </CourseFeedback>
+
+<CourseFeedback>
+    <CourseFeedbackHeader
+      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
+      name="Gabriel Silva"
+      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+    />
+
+    <CourseFeedbackBubble>
+      <CourseFeedbackText>
+        Minha experiência no curso tem sido muito boa.
+        O site é bem intuitivo e as aulas ao vivo são um diferencial.
+        Fui surpreendido pela <strong>seriedade da instituição</strong> e
+        pela <strong>dedicação dos professores</strong>, que demonstram
+        cuidado não apenas em transmitir conhecimento teológico/bíblico,
+        mas também em contribuir para a nossa transformação pessoal.
+      </CourseFeedbackText>
+    </CourseFeedbackBubble>
+  </CourseFeedback>
+  
+</CourseFeedbacks>
       <CourseLearnMore>
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
@@ -134,6 +200,6 @@ export default async function Page() {
         </CourseLearnMoreItems>
       </CourseLearnMore>
       <CourseFaculties {...{ faculties }} />
-    </main>
+    </main> 
   );
 }
