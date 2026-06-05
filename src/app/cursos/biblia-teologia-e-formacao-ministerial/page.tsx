@@ -128,65 +128,54 @@ export default async function Page() {
           </p>
         </div>
       </CourseInfo>
-<CourseFeedbacks>
-  <CourseFeedback>
-    <CourseFeedbackHeader
-      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
-      name="Gabriel Silva"
-      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
-    />
+      <CourseFeedbacks>
+        <CourseFeedback>
+          <CourseFeedbackHeader
+            image="/imagens/biblia-teologia-e-formacao-ministerial/foto-gabriel.jpeg"
+            name="Gabriel Silva"
+            subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+          />
 
-    <CourseFeedbackBubble>
-      <CourseFeedbackText>
-        Minha experiência no curso tem sido muito boa.
-        O site é bem intuitivo e as aulas ao vivo são um diferencial.
-        Fui surpreendido pela <strong>seriedade da instituição</strong> e
-        pela <strong>dedicação dos professores</strong>, que demonstram
-        cuidado não apenas em transmitir conhecimento teológico/bíblico,
-        mas também em contribuir para a nossa transformação pessoal.
-      </CourseFeedbackText>
-    </CourseFeedbackBubble>
-  </CourseFeedback>
+          <CourseFeedbackBubble>
+            <CourseFeedbackText>
+              "Minha experiência no curso tem sido muito boa. 
+              O site é bem intuitivo e as aulas ao vivo são um diferencial. 
+              Fui surpreendido pela <strong>seriedade da instituição</strong> e pela <strong>dedicação dos professores</strong>, 
+              que demonstram cuidado não apenas em transmitir conhecimento teológico/bíblico, 
+              mas também em contribuir para o nossa transformação pessoal e avanço da nossa vida cristã."
+            </CourseFeedbackText>
+          </CourseFeedbackBubble>
+        </CourseFeedback>
 
-<CourseFeedback>
-    <CourseFeedbackHeader
-      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
-      name="Gabriel Silva"
-      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
-    />
+        <CourseFeedback>
+          <CourseFeedbackHeader
+            image="/imagens/biblia-teologia-e-formacao-ministerial/foto-jose.jpeg"
+            name="José Magagule"
+            subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+          />
 
-    <CourseFeedbackBubble>
-      <CourseFeedbackText>
-        Minha experiência no curso tem sido muito boa.
-        O site é bem intuitivo e as aulas ao vivo são um diferencial.
-        Fui surpreendido pela <strong>seriedade da instituição</strong> e
-        pela <strong>dedicação dos professores</strong>, que demonstram
-        cuidado não apenas em transmitir conhecimento teológico/bíblico,
-        mas também em contribuir para a nossa transformação pessoal.
-      </CourseFeedbackText>
-    </CourseFeedbackBubble>
-  </CourseFeedback>
+          <CourseFeedbackBubble>
+            <CourseFeedbackText>
+              "Fazer este curso tem sido uma boa experiência. As aulas e a colocação dos textos facilitam muito para que eu possa estudar no tempo que estou disponível. Os vídeos, por serem curtos, ajudam a manter a atenção e também para que eu consiga assistir nos tempos livres. Até aqui estou feliz por fazer parte deste curso."
+            </CourseFeedbackText>
+          </CourseFeedbackBubble>
+        </CourseFeedback>
 
-<CourseFeedback>
-    <CourseFeedbackHeader
-      image="/imagens/biblia-teologia-e-formacao-ministerial/jhon_teste.png"
-      name="Gabriel Silva"
-      subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
-    />
+        <CourseFeedback>
+          <CourseFeedbackHeader
+            image="/imagens/biblia-teologia-e-formacao-ministerial/foto-james.jpeg"
+            name="JAMES"
+            subtitle="Aluno da Pós em Bíblia, Teologia e Formação Ministerial"
+          />
 
-    <CourseFeedbackBubble>
-      <CourseFeedbackText>
-        Minha experiência no curso tem sido muito boa.
-        O site é bem intuitivo e as aulas ao vivo são um diferencial.
-        Fui surpreendido pela <strong>seriedade da instituição</strong> e
-        pela <strong>dedicação dos professores</strong>, que demonstram
-        cuidado não apenas em transmitir conhecimento teológico/bíblico,
-        mas também em contribuir para a nossa transformação pessoal.
-      </CourseFeedbackText>
-    </CourseFeedbackBubble>
-  </CourseFeedback>
-  
-</CourseFeedbacks>
+          <CourseFeedbackBubble>
+            <CourseFeedbackText>
+              "Tem sido uma belíssima experiência didática, mesmo com a correria do dia e da semana, os módulos bem construídos as vídeo aulas apostila intuitiva a plataforma muito boa! Parabéns a instituição a dedicação com os alunos para o crescimento!"
+            </CourseFeedbackText>
+          </CourseFeedbackBubble>
+        </CourseFeedback>
+        
+      </CourseFeedbacks>
       <CourseLearnMore>
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>

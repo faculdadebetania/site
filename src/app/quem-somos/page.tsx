@@ -1,7 +1,4 @@
-import { getFaculties } from 'src/providers/faculty.provider';
-
 export default async function Page() {
-  const faculties = await getFaculties();
   return (
     <main className="space-y-8">
       <section className="bg-white text-gray-800">
