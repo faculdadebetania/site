@@ -20,6 +20,10 @@ export default function NavMobile() {
           INÍCIO
         </Link>
         <Separator />
+        <Link href="/quem-somos" onClick={() => setOpen(false)}>
+          QUEM SOMOS
+        </Link>
+        <Separator />
         <Link href="/#cursos" onClick={() => setOpen(false)}>
           CURSOS
         </Link>
