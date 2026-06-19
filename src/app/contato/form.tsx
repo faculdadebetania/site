@@ -51,7 +51,7 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      if (isLoading) return; // 🔥 bloqueia double click
+      if (isLoading) return;
 
       setIsLoading(true);
       setStatusMessage(null);
@@ -87,20 +87,21 @@ export default function ContactForm() {
       setSuccess(result.success);
 
       if (result.success) {
-        reset(); // 🔥 limpa form após sucesso
+        reset();
       }
     } catch (err) {
       console.error(err);
       setStatusMessage('Erro inesperado.');
       setSuccess(false);
     } finally {
-      setIsLoading(false); // 🔥 SEMPRE libera botão
+      setIsLoading(false);
     }
   };
 
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+
         <FormField
           control={control}
           name="name"
@@ -157,23 +158,34 @@ export default function ContactForm() {
           )}
         />
 
-        <Button
-          type="submit"
-          disabled={isLoading}
-          className="flex items-center gap-2"
-        >
-          {isLoading ? 'Enviando...' : 'Enviar'}
+        {/* 🔥 BOTÃO + MENSAGEM LADO A LADO */}
+        <div className="flex items-center gap-4">
+          <Button
+            type="submit"
+            disabled={isLoading}
+            className="bg-white text-black hover:bg-gray-100 flex items-center justify-center gap-2 min-w-[140px] border"
+          >
+            {isLoading ? (
+              <>
+                <Icon name="LoaderCircle" className="animate-spin" />
+                Enviando...
+              </>
+            ) : (
+              'Enviar'
+            )}
+          </Button>
 
-          {isLoading && (
-            <Icon name="LoaderCircle" className="animate-spin" />
+          {statusMessage && (
+            <p
+              className={`text-sm ${
+                success ? 'text-green-600' : 'text-red-600'
+              }`}
+            >
+              {statusMessage}
+            </p>
           )}
-        </Button>
+        </div>
 
-        {statusMessage && (
-          <p className={success ? 'text-green-600' : 'text-red-600'}>
-            {statusMessage}
-          </p>
-        )}
       </form>
     </Form>
   );
