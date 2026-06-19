@@ -1,3 +1,5 @@
+export const runtime = 'nodejs';
+
 'use server';
 
 import { createTransport } from 'nodemailer';
@@ -9,7 +11,7 @@ interface ContactActionResponse {
 }
 
 const transporter = createTransport({
-  host: 'smtp.faculdadebetania.com.br',
+  host: 'emailssl-vip.kinghost.net',
   port: 465,
   secure: true,
   auth: {
