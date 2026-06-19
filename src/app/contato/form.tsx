@@ -15,17 +15,17 @@ import normalizePhone from '@masks/phone.mask';
 import { VerifyToken } from '@utils/recaptcha';
 
 const schema = z.object({
-  name: z.string().min(2, 'Nome obrigatório'),
-  email: z.string().email('E-mail inválido'),
-  phone: z.string().min(14, 'Telefone inválido'),
-  message: z.string().min(1, 'Mensagem obrigatória'),
+  name: z.string().min(2),
+  email: z.string().email(),
+  phone: z.string().min(10),
+  message: z.string().min(1),
 });
 
-export type ContactFormData = z.infer<typeof schema>;
+type ContactFormData = z.infer<typeof schema>;
 
 export default function ContactForm() {
-  const [isLoading, setLoading] = useState(false);
-  const [message, setMessage] = useState<string>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
   const form = useForm<ContactFormData>({
@@ -38,37 +38,38 @@ export default function ContactForm() {
     },
   });
 
-  const { control, handleSubmit, watch, setValue, formState } = form;
+  const { control, handleSubmit, watch, setValue, reset } = form;
 
   const phoneValue = watch('phone');
 
   useEffect(() => {
-    const normalized = normalizePhone(phoneValue || '');
-    if (normalized !== phoneValue) {
-      setValue('phone', normalized);
+    const formatted = normalizePhone(phoneValue || '');
+    if (formatted !== phoneValue) {
+      setValue('phone', formatted);
     }
   }, [phoneValue, setValue]);
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      setLoading(true);
+      if (isLoading) return; // 🔥 bloqueia double click
 
-      console.log('🔥 FRONTEND - DATA ORIGINAL:', data);
+      setIsLoading(true);
+      setStatusMessage(null);
 
-      const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY!;
-      const recaptchaToken = await window.grecaptcha.execute(recaptchaSiteKey, {
-        action: 'submit',
-      });
+      console.log('📤 ENVIANDO:', data);
 
-      const isValidToken = await VerifyToken(recaptchaToken);
+      const recaptchaToken = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_KEY!,
+        { action: 'submit' }
+      );
 
-      if (!isValidToken) {
-        setMessage('Erro no reCAPTCHA.');
+      const isValid = await VerifyToken(recaptchaToken);
+
+      if (!isValid) {
+        setStatusMessage('Falha no reCAPTCHA.');
         setSuccess(false);
         return;
       }
-
-      console.log('📤 ENVIANDO PARA API:', data);
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -80,16 +81,20 @@ export default function ContactForm() {
 
       const result = await response.json();
 
-      console.log('📥 RESPOSTA API:', result);
+      console.log('📥 RESPONSE:', result);
 
-      setMessage(result.message);
+      setStatusMessage(result.message);
       setSuccess(result.success);
+
+      if (result.success) {
+        reset(); // 🔥 limpa form após sucesso
+      }
     } catch (err) {
-      console.error('❌ FRONT ERROR:', err);
-      setMessage('Erro inesperado.');
+      console.error(err);
+      setStatusMessage('Erro inesperado.');
       setSuccess(false);
     } finally {
-      setLoading(false);
+      setIsLoading(false); // 🔥 SEMPRE libera botão
     }
   };
 
@@ -152,14 +157,23 @@ export default function ContactForm() {
           )}
         />
 
-        <Button type="submit" disabled={isLoading || success}>
+        <Button
+          type="submit"
+          disabled={isLoading}
+          className="flex items-center gap-2"
+        >
           {isLoading ? 'Enviando...' : 'Enviar'}
-          {isLoading && <Icon name="LoaderCircle" className="animate-spin ml-2" />}
+
+          {isLoading && (
+            <Icon name="LoaderCircle" className="animate-spin" />
+          )}
         </Button>
 
-        <p className={success ? 'text-green-600' : 'text-red-600'}>
-          {message}
-        </p>
+        {statusMessage && (
+          <p className={success ? 'text-green-600' : 'text-red-600'}>
+            {statusMessage}
+          </p>
+        )}
       </form>
     </Form>
   );
