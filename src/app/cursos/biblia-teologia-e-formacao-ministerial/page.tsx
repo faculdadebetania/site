@@ -32,13 +32,14 @@ import {
 import { capitalize } from '@utils/capitalize';
 import Image from 'next/image';
 import { getCourse } from 'src/providers/course.provider';
+import CourseCurriculum from '../course-curriculum';
 
 export const metadata = {
   title: 'Bíblia, Teologia e Formação Ministerial - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, faculties } =
+  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, faculties, curriculum } =
     await getCourse('biblia-teologia-e-formacao-ministerial');
 
   return (
@@ -128,6 +129,7 @@ export default async function Page() {
           </p>
         </div>
       </CourseInfo>
+      <CourseCurriculum {...{ curriculum }} />
       <CourseFeedbacks>
         <CourseFeedback>
           <CourseFeedbackHeader
