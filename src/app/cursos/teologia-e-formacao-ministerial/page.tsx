@@ -24,13 +24,14 @@ import {
 } from '@app/cursos/course-learn-more';
 import { capitalize } from '@utils/capitalize';
 import { getCourse } from 'src/providers/course.provider';
+import CourseCurriculum from '../course-curriculum';
 
 export const metadata = {
   title: 'Bíblia, Teologia e Formação Ministerial - Faculdade Teológica Betânia',
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, faculties } =
+  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, classSchedule, weekDays, faculties, curriculum } =
     await getCourse('teologia-e-formacao-ministerial');
 
   return (
@@ -105,6 +106,7 @@ export default async function Page() {
           </p>
         </section>
       </CourseInfo>
+      <CourseCurriculum {...{ curriculum }} />
       <CourseLearnMore>
         <CourseLearnMoreTitle>Saiba Mais</CourseLearnMoreTitle>
         <CourseLearnMoreItems>
