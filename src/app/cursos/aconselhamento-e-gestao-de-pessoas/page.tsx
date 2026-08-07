@@ -28,7 +28,7 @@ export default async function Page() {
     modality,
     duration,
     period,
-    periodDisclaimer,
+    durationDisclaimer,
     price,
     priceDisclaimer,
     classSchedule,
@@ -86,6 +86,7 @@ export default async function Page() {
           <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Duração</CourseFeatureTitle>
           <CourseFeatureValue>{duration}</CourseFeatureValue>
+          <CourseFeatureValue className="text-sm">{durationDisclaimer}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="Clock3" />
@@ -93,7 +94,6 @@ export default async function Page() {
           <CourseFeatureValue>
             {period}&nbsp;({classSchedule})
           </CourseFeatureValue>
-          <CourseFeatureValue className="text-sm">{periodDisclaimer}</CourseFeatureValue>
           <CourseFeatureValue className="text-sm">{weekDays}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>

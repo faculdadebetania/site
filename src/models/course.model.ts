@@ -3,7 +3,7 @@ import { Faculty } from './faculty.model';
 export interface Course {
   price: string;
   period: string;
-  periodDisclaimer: string | null;
+  durationDisclaimer: string | null;
   duration: string;
   startDate: string;
   modality: 'presencial' | 'presencial/online' | 'online';
