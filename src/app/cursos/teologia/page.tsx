@@ -20,7 +20,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, periodDisclaimer, price, priceDisclaimer, classSchedule, weekDays, faculties } =
+  const { startDate, name, category, modality, duration, period, durationDisclaimer, price, priceDisclaimer, classSchedule, weekDays, faculties } =
     await getCourse('teologia');
 
   return (
@@ -43,6 +43,7 @@ export default async function Page() {
           <CourseFeatureIcon name="CalendarDays" />
           <CourseFeatureTitle>Duração</CourseFeatureTitle>
           <CourseFeatureValue>{duration}</CourseFeatureValue>
+          {durationDisclaimer && <CourseFeatureValue className="text-sm">{durationDisclaimer}</CourseFeatureValue>}
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="Clock3" />
@@ -50,7 +51,6 @@ export default async function Page() {
           <CourseFeatureValue>
             {period}&nbsp;({classSchedule})
           </CourseFeatureValue>
-          {periodDisclaimer && <CourseFeatureValue className="text-sm">{periodDisclaimer}</CourseFeatureValue>}
           <CourseFeatureValue className="text-sm">{weekDays}</CourseFeatureValue>
         </CourseFeature>
         <CourseFeature>
