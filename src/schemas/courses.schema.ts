@@ -9,6 +9,7 @@ export const schema = z.object({
     z.object({
       price: z.number(),
       period: z.enum(['noturno', 'a sua escolha']),
+      periodDisclaimer: z.string().nullable(),
       duration: z.number(),
       durationUnit: z.enum(['dias', 'meses', 'anos']),
       startDate: z.coerce.date(),
@@ -42,6 +43,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       duration,
       durationUnit,
       period,
+      periodDisclaimer,
       startDate,
       startDateType,
       price,
@@ -101,6 +103,7 @@ const response = schema.transform<Array<Course>>(({ data }) => {
       priceDisclaimer,
       duration: _duration,
       period: _period,
+      periodDisclaimer,
       startDate: _startDate,
       price: _price,
       weekDays: _weekDays,

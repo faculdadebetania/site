@@ -39,7 +39,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const { startDate, name, category, modality, duration, period, price, priceDisclaimer, faculties, curriculum } =
+  const { startDate, name, category, modality, duration, period, periodDisclaimer, price, priceDisclaimer, faculties, curriculum } =
     await getCourse('biblia-teologia-e-formacao-ministerial');
 
   return (
@@ -94,6 +94,7 @@ export default async function Page() {
           <CourseFeatureValue>
             {period}
           </CourseFeatureValue>
+          {periodDisclaimer && <CourseFeatureValue className="text-sm">{periodDisclaimer}</CourseFeatureValue>}
         </CourseFeature>
         <CourseFeature>
           <CourseFeatureIcon name="CircleDollarSign" />
