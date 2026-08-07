@@ -9,7 +9,7 @@ export const schema = z.object({
     z.object({
       price: z.number(),
       period: z.enum(['noturno', 'a sua escolha']),
-      periodDisclaimer: z.string(),
+      periodDisclaimer: z.string().nullable(),
       duration: z.number(),
       durationUnit: z.enum(['dias', 'meses', 'anos']),
       startDate: z.coerce.date(),
