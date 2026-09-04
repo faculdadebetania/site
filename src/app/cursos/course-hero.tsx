@@ -12,8 +12,20 @@ export function CourseHeroTitle({ children }: PropsWithChildren) {
   return <h1 className="uppercase text-4xl md:text-7xl font-extrabold break-words">{children}</h1>;
 }
 
+export function CourseHeroTitleCenter({ children }: PropsWithChildren) {
+  return <h1 className="uppercase text-5xl md:text-7x2 font-extrabold break-words text-center">{children}</h1>;
+}
+
 export function CourseHeroSubtitle({ children }: PropsWithChildren) {
   return <h3 className="uppercase text-xl font-bold text-secondary">{children}</h3>;
+}
+
+export function CourseHeroSubtitleCenter({ children }: PropsWithChildren) {
+  return <h3 className="uppercase text-xl font-bold text-secondary text-center">{children}</h3>;
+}
+
+export function CourseHeroSubtitleCenterTwo({ children }: PropsWithChildren) {
+  return <h3 className="text-xl text-white text-center">{children}</h3>;
 }
 
 export function CourseHeroAction({ href, children, className }: PropsWithChildren<{ href: string; className?: string }>) {
