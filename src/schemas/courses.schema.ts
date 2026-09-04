@@ -18,7 +18,10 @@ export const schema = z.object({
       name: z.string(),
       slug: z.string(),
       priceDisclaimer: z.string(),
-      weekDays: z.array(z.enum(['seg.', 'ter.', 'qua.', 'qui.', 'sex.', 'sáb.', 'dom.'])),
+      weekDays: z.array(z.enum([
+        'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo',
+        'seg.', 'ter.', 'qua.', 'qui.', 'sex.', 'sáb.', 'dom.'
+      ])),
       paymentRecurrence: z.enum(['mês', 'único']),
       startDateType: z.enum(['dia', 'mês']),
       classSchedule: z.string(),
