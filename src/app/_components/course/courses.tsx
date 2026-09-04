@@ -10,6 +10,7 @@ export default async function Courses() {
     'teologia',
     'aconselhamento-e-gestao-de-pessoas',
     'biblia-teologia-e-formacao-ministerial',
+    'inteligencia-artificial-aplicada-ao-ministerio',
     'teologia-e-formacao-ministerial',
     'capelania',
     'comunicacao-que-transforma',
