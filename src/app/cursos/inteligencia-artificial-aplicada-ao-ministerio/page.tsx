@@ -40,7 +40,7 @@ export default async function Page() {
       <CourseHero>
         <CourseHeroBackground src={`/imagens/inteligencia-artificial-aplicada-ao-ministerio/fundo-ia.png`} />
         <CourseHeroTitleCenter>Inteligência Artificial<br/>Aplicada ao Ministério</CourseHeroTitleCenter>
-        <hr className="w-[700px] mx-auto border-t-1 border-white" />
+        <hr className="w-[calc(100%-2rem)] max-w-[700px] mx-auto border-t-1 border-white" />
         <CourseHeroSubtitleCenter>PARA PASTORES E LÍDERES</CourseHeroSubtitleCenter>
         <CourseHeroSubtitleCenterTwo>Como otimizar a gestão, transformar sermões gravados<br/>em aulas, apostilas, esboço de células, gerar relatórios,<br/>apresentações e muito mais em minutos?</CourseHeroSubtitleCenterTwo>
         <CourseHeroSubtitle>{category}</CourseHeroSubtitle>
