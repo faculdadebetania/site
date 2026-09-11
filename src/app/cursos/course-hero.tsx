@@ -56,3 +56,22 @@ export function CourseHeroBackground({ src }: { src: string }) {
     </div>
   );
 }
+
+export function CourseHeroG({ children }: PropsWithChildren) {
+  return <section className="container flex flex-col justify-end gap-4 min-h-[384px] lg:h-[448px]">{children}</section>;
+}
+
+export function CourseHeroGBackground({ src }: { src: string }) {
+  return (
+    <div className="absolute top-0 left-0 w-full -z-10 h-[730px] sm:h-[512px] lg:h-[576px]">
+      <Image
+        alt="hero"
+        src={src}
+        fill
+        style={{
+          objectFit: 'cover',
+        }}
+      />
+    </div>
+  );
+}
