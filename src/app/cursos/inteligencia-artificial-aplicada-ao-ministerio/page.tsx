@@ -3,7 +3,7 @@ import { capitalize } from '@utils/capitalize';
 import { getCourse } from 'src/providers/course.provider';
 import { CourseFaculties } from '../course-faculty';
 import { CourseFeature, CourseFeatureIcon, CourseFeatures, CourseFeatureTitle, CourseFeatureValue } from '../course-features';
-import { CourseHero, CourseHeroAction, CourseHeroBackground, CourseHeroSubtitle, CourseHeroSubtitleCenter, CourseHeroSubtitleCenterTwo, CourseHeroTitleCenter } from '../course-hero';
+import { CourseHeroAction, CourseHeroG, CourseHeroGBackground, CourseHeroSubtitle, CourseHeroSubtitleCenter, CourseHeroSubtitleCenterTwo, CourseHeroTitleCenter } from '../course-hero';
 import { CourseInfo } from '../course-info';
 import {
   CourseLearnMore,
@@ -37,8 +37,8 @@ export default async function Page() {
 
   return (
     <main className="flex flex-col">
-      <CourseHero>
-        <CourseHeroBackground src={`/imagens/inteligencia-artificial-aplicada-ao-ministerio/fundo-ia.png`} />
+      <CourseHeroG>
+        <CourseHeroGBackground src={`/imagens/inteligencia-artificial-aplicada-ao-ministerio/fundo-ia.png`} />
         <CourseHeroTitleCenter>Inteligência Artificial<br/>Aplicada ao Ministério</CourseHeroTitleCenter>
         <hr className="w-[calc(100%-2rem)] max-w-[700px] mx-auto border-t-1 border-white" />
         <CourseHeroSubtitleCenter>PARA PASTORES E LÍDERES</CourseHeroSubtitleCenter>
@@ -51,7 +51,7 @@ export default async function Page() {
             </CourseHeroAction>
           </div>
         </div>
-      </CourseHero>
+      </CourseHeroG>
       <CourseFeatures>
         <CourseFeature>
           <CourseFeatureIcon name="PanelBottom" />
